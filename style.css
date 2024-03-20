@@ -68,7 +68,7 @@ main {
 }
 
 #copy {
-  color: black;
+  color: red;
 }
 
 /*form CSS */
@@ -103,6 +103,12 @@ button {
   background-color: green;
   color: antiquewhite;
   width: 100px;
+  margin: 0px;
+}
+
+#signup {
+  margin-left: 94px;
+  
 }
 
 #login {
