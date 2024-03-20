@@ -1,0 +1,116 @@
+/* styles.css */
+/* styles.css */
+body {
+background-color: #ffbf00;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: px;
+  padding: 20px;
+  background-color: pink;
+  overflow: hidden;
+  
+}
+
+#navbar ul li {
+  float: left;
+}
+
+#navbar ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+}
+
+#navbar ul li a:hover  {
+  color: white;
+  
+}
+
+#navbar ul li:first-child {
+  margin-left: 20px; /* Add some margin to the leftmost item */
+}
+
+/* Default styles */
+body {
+  margin: 0; /* Reset default margin */
+}
+
+.section {
+  padding: 20px; /* Add padding for content */
+  margin: 5% auto; /* Responsive margins */
+  max-width: 800px; /* Set maximum width for content */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .section {
+      margin: 3% auto; /* Adjust margins for smaller screens */
+  }
+}
+
+.main {
+  margin: 5% auto; /* Responsive margins */
+  max-width: 800px; /* Optional: Set maximum width */
+  height: 500px;
+  
+}
+main {
+  margin: 0 5vw; /* Responsive horizontal margins */
+}
+@media screen and (max-width: 600px) {
+  main {
+      margin: 3% auto; /* Adjusted margins for smaller screens */
+  }
+}
+
+#copy {
+  color: black;
+}
+
+/*form CSS */
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 50px;
+  
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: green;
+  color: antiquewhite;
+  width: 100px;
+}
+
+#login {
+  text-align: center;
+}
+
+.container {
+text-align: center;
+}
+
+
