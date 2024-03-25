@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+  <nav id="navbar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" id="contact">Contact</a></li>
+        <li><a href="index.html" >Parents</a></li>
+        <li><a href="index.html" >News and Events</a></li>
+        <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <div class="main">
+    <div class="container">
+    <img src="images/logo.jpeg" alt="logo" id="logo">
+  </div>
+
+  <h2 id="login">Welcome! </h2>
+  <form id="myForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="button" onclick="validateForm()">LOGIN</button>
+    
+    <a href="/signup/signup.html"><button type="button" onclick="validateForm()" id="signup">SIGN UP</button></a>
+    
+  </form>
+
+  <p id="error-message"></p>
+  <script src="script.js"></script>
+  <script src="css/bootstrap/js/bootstrap.js"></script> 
+</body>
+</html>

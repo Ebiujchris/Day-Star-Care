@@ -1,49 +1,46 @@
+
 /* styles.css */
 /* styles.css */
 body {
-background-color: #ffbf00;
-}
-
-#navbar ul {
-  list-style-type: none;
-  margin: px;
-  padding: 20px;
-  background-color: pink;
-  overflow: hidden;
+  background-color: #ffbf00;
+  }
   
-}
-
-#navbar ul li {
-  float: left;
-}
-
-#navbar ul li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 18px 20px;
-  text-decoration: none;
-}
-
-#navbar ul li a:hover  {
-  color: white;
+  #navbar ul {
+    list-style-type: none;
+    margin: px;
+    padding: 20px;
+    background-color: pink;
+    overflow: hidden;
+    
+  }
   
-}
+  #navbar ul li {
+    float: left;
+  }
+  
+  #navbar ul li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+  }
+  
+  #navbar ul li a:hover  {
+    color: white;
+    
+  }
+  
+  #navbar ul li:first-child {
+    margin-left: 5px; /* Add some margin to the leftmost item */
+  }
 
-#navbar ul li:first-child {
-  margin-left: 20px; /* Add some margin to the leftmost item */
-}
+ 
 
-/* Default styles */
-body {
-  margin: 0; /* Reset default margin */
-}
 
-.section {
-  padding: 20px; /* Add padding for content */
-  margin: 5% auto; /* Responsive margins */
-  max-width: 800px; /* Set maximum width for content */
-}
+
+
+
 
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {
@@ -115,8 +112,12 @@ button {
   text-align: center;
 }
 
-.container {
-text-align: center;
+#signin {
+  margin-left: 300px;
+}
+
+.img {
+
 }
 
 
