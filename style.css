@@ -1,51 +1,44 @@
+.navbar {
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
-/* styles.css */
-/* styles.css */
-body {
-  background-color: #ffbf00;
-  }
+#footer {
+  background-color: lightcoral;
   
-  #navbar ul {
-    list-style-type: none;
-    margin: px;
-    padding: 20px;
-    background-color: pink;
-    overflow: hidden;
-    
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  #navbar ul li {
-    float: left;
+  .navbar a {
+    width: 100%;
+    text-align: left;
   }
-  
-  #navbar ul li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 18px 20px;
-    text-decoration: none;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  #navbar ul li a:hover  {
-    color: white;
-    
+  .navbar a {
+    width: 100%;
+    text-align: left;
   }
-  
-  #navbar ul li:first-child {
-    margin-left: 5px; /* Add some margin to the leftmost item */
-  }
-
- 
-
-
-
-
-
+}
 
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {
   .section {
-      margin: 3% auto; /* Adjust margins for smaller screens */
+    margin: 3% auto; /* Adjust margins for smaller screens */
   }
 }
 
@@ -53,14 +46,13 @@ body {
   margin: 5% auto; /* Responsive margins */
   max-width: 800px; /* Optional: Set maximum width */
   height: 500px;
-  
 }
 main {
   margin: 0 5vw; /* Responsive horizontal margins */
 }
 @media screen and (max-width: 600px) {
   main {
-      margin: 3% auto; /* Adjusted margins for smaller screens */
+    margin: 3% auto; /* Adjusted margins for smaller screens */
   }
 }
 
@@ -70,10 +62,9 @@ main {
 
 /*form CSS */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   text-align: center;
   margin: 50px;
-  
 }
 
 form {
@@ -104,8 +95,7 @@ button {
 }
 
 #signup {
-  margin-left: 94px;
-  
+  margin-left: 5px;
 }
 
 #login {
@@ -116,8 +106,11 @@ button {
   margin-left: 300px;
 }
 
-.img {
-
+#logo2 {
+  text-align: center;
 }
 
-
+#logo1 {
+  width: 100px;
+  
+}
