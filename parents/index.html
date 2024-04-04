@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parents Dashboard</title>
+<link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/sitecss/parent.css">
+  <link href="/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/logo.jpeg"> 
+</head>
+<body style="background-color: lightblue;">
+
+  
+  
+    <!--My navbar  -->
+    
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index.html" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; margin-left: 250px;">HOME<span class="sr-only"></span></a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Sign Out</a>
+          </li>   
+      </div>
+    </nav>
+
+
+
+
+<div class="sidebar">
+    <h2>Parents Dashboard</h2>
+    <ul>
+        <li><a href="#" onclick="loadPage('home')">Home</a></li>
+        <li><a href="#" onclick="loadPage('profile')">Profile</a></li>
+        <li><a href="#" onclick="loadPage('payments')">Payments</a></li>
+        <li><a href="#" onclick="loadPage('notifications')">Notifications</a></li>
+        <!-- Add more sidebar links as needed -->
+    </ul>
+</div>
+
+<div class="content" id="mainContent">
+    <!-- Main content will be loaded here -->
+    <h2>Welcome to the Parents Dashboard!</h2>
+    
+</div>
+
+<script>
+function loadPage(page) {
+    const contentDiv = document.getElementById('mainContent');
+    switch (page) {
+        case 'home':
+            contentDiv.innerHTML = '<h2>Home Page</h2><p>This is the home page content.</p>';
+            break;
+        case 'profile':
+            contentDiv.innerHTML = '<h2>Profile Page</h2><p>This is the profile page content.</p>';
+            break;
+        case 'payments':
+            contentDiv.innerHTML = '<h2>Payments Page</h2><p>This is the payments page content.</p>';
+            break;
+        case 'notifications':
+            contentDiv.innerHTML = '<h2>Notifications Page</h2><p>This is the notifications page content.</p>';
+            break;
+        // Add cases for more pages as needed
+        default:
+            contentDiv.innerHTML = '<h2>Page Not Found</h2><p>The requested page does not exist.</p>';
+    }
+}
+</script>
+
+</body>
+</html>

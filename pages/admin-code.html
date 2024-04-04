@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: lightblue;
+      }
+
+      .password-prompt {
+        background-color: blue;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .password-prompt input[type="password"] {
+        width: 200px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .password-prompt button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .password-prompt button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Define the correct password
+      const correctPassword = "director";
+
+      // Function to prompt for password
+      function promptForPassword() {
+        // Prompt for password
+        const password = prompt("Enter the admin password:");
+
+        // Check if the entered password is correct
+        if (password === correctPassword) {
+          // If correct, redirect to the admin dashboard
+          window.location.href = "admin.html";
+        } else {
+          // If incorrect, show an alert
+          alert("Incorrect password. Please try again.");
+          // Optionally, you can call promptForPassword() again to prompt repeatedly
+        }
+      }
+
+      // Call the function to prompt for password when the page loads
+      promptForPassword();
+    </script>
+  </body>
+</html>

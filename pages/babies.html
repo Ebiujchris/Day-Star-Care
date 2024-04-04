@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DayStar DayCare</title>
+  <link rel="stylesheet" href="/sitecss/baby.css">
+  <link href="/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/logo.jpeg"> 
+</head>
+<body style="background-color:lightgrey;">
+
+
+  
+  <!--My navbar  -->
+  
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/index.html" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;">HOME<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/babies2.html" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">BABIES</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/dashboard.html" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">DASHBOARD</a>
+          
+        </li>
+        
+      </ul> 
+    </div>
+  </nav>
+  
+  
+        
+      
+        <!-- Main Content -->
+    <main>
+    
+   
+</head>
+<body>
+    <h1>Baby Registration Form</h1>
+    <form id="babyForm">
+        <input type="file" accept="image/*" id="passportPhoto" onchange="previewPhoto()">
+        <br>
+        <img src="" alt="Passport Photo Preview" id="photoPreview">
+        <br>
+        <label for="babyName">Name:</label>
+        <input type="text" id="babyName" required><br>
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" required><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" required><br>
+        <label for="personName">Person Bringing the Baby:</label>
+        <input type="text" id="personName" required><br>
+        <label for="arrivalTime">Time of Arrival:</label>
+        <input type="datetime-local" id="arrivalTime" required><br>
+        <label for="departureTime">Time of Departure:</label>
+        <input type="datetime-local" id="departureTime" required><br>
+        <label for="parent1Name">Parent 1 Name:</label>
+        <input type="text" id="parent1Name" required><br>
+        <label for="parent2Name">Parent 2 Name:</label>
+        <input type="text" id="parent2Name"><br>
+        <label for="fee">Fee (Ugx):</label>
+        <input type="number" id="fee" required><br>
+        <label for="periodOfStay">Period of Stay:</label>
+        <input type="text" id="periodOfStay" required><br>
+        <label for="babyNumber">Baby Number:</label>
+        <input type="text" id="babyNumber" required><br>
+        <label for="contacts">Contacts:</label>
+        <input type="text" id="contacts" required><br>
+        <textarea id="address" rows="4" required></textarea><br>
+        <div class="comments-section">
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" rows="4"></textarea>
+        </div>
+        <button type="button" onclick="registerBaby()">Register Baby</button>
+    </form><br><br><br>
+
+    
+    <table id="babyTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Location</th>
+                <th>Person Bringing</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+                <th>Parent 1 Name</th>
+                <th>Parent 2 Name</th>
+                <th>Fee (Ugx)</th>
+                <th>Period of Stay</th>
+                <th>Baby Number</th>
+                <th>Contacts</th>
+                <th>Comments</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="babyList"></tbody>
+    </table>
+    
+
+   
+<!-- Footer -->
+  <footer class="text-white text-center text-lg-start" id ="footer">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+  
+          <p>
+            Caring. Honesty. Respect. Responsibility. Child Care Excellence. Come. Sit. Play with us! Daycare is great… children make it special.
+          </p>
+
+          <div class="mt-4">
+            <!-- Facebook -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
+            <!-- Dribbble -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
+            <!-- Twitter -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
+            <!-- Google + -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
+            <!-- Linkedin -->
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+  
+          <ul class="fa-ul" style="margin-left: 1.65em;">
+            
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">daystardaycare@gmail.com</span>
+            </li>
+
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">0774560634</span>
+            </li>
+          </ul>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+    
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: lightblue;">
+      <p id="copy">© 2024 Copyright:</p>
+      </div>
+  
+  </footer>
+
+
+<!-- For my dropdowns -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script src="/js/babyregistration.js"></script>
+  <script src="/css/bootstrap/js/bootstrap.js"></script> 
+</body>
+</html>
