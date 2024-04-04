@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+<link rel="stylesheet" href="/sitecss/checkout.css">
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+<!-- Display Cart Items -->
+<div id="cart">
+    <!-- Cart items will be displayed here -->
+</div>
+
+<!-- Payment Options -->
+<div id="paymentOptions">
+    <label><input type="radio" name="paymentMethod" value="mobileMoney"> Mobile Money</label><br>
+    <label><input type="radio" name="paymentMethod" value="onlinePayment"> Online Payment</label><br>
+    <label><input type="radio" name="paymentMethod" value="cashOnDelivery"> Cash on Delivery</label><br>
+</div>
+
+<!-- Checkout Button -->
+<button id="checkoutBtn">Checkout</button>
+
+<!-- Payment Popup -->
+<div id="paymentPopup">
+    <!-- Payment options and form fields will be displayed here -->
+</div>
+
+<script src="/js/store.js"></script>
+</body>
+</html>

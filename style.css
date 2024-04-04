@@ -1,5 +1,5 @@
 .navbar {
-  background-color: lightcoral;
+  background-color: lightgray;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -7,13 +7,10 @@
   
 }
 
-#sign {
-  
-  
-}
 
 #footer {
-  background-color: lightcoral;
+  background-color: lightblue;
+  
   
 }
 
@@ -251,6 +248,7 @@ html {
   color: #fff;
   padding: 20px 0;
   text-align: center;
+  
 }
 
 .container {
