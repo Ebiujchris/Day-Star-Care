@@ -1,0 +1,530 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  color: purple;
+  height: px;
+  box-shadow: 5px 8px 16px 5px rgba(0,0,0,0.2);
+}
+
+.logo img {
+  height: 80px;
+  padding-left: 50px;
+}
+
+.nav-item {
+  margin-left: 100px;
+}
+.daycare-name h1 {
+  
+  font-size: 24px;
+  padding-right: 0px;
+}
+
+.menu {
+  list-style-type: none;
+  margin-right: 30px;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  margin: 0 10px;
+}
+
+.menu li.dropdown {
+  position: relative;
+}
+
+.menu li.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menu li.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu li.dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.menu li.dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+#footer {
+  background-color: lightblue;
+  
+  
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar a {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .section {
+    margin: 3% auto; /* Adjust margins for smaller screens */
+  }
+}
+
+.main {
+  margin: 5% auto; /* Responsive margins */
+  max-width: 800px; /* Optional: Set maximum width */
+  height: 500px;
+}
+main {
+  margin: 0 5vw; /* Responsive horizontal margins */
+}
+@media screen and (max-width: 600px) {
+  main {
+    margin: 3% auto; /* Adjusted margins for smaller screens */
+  }
+}
+
+#copy {
+  color: red;
+}
+
+/*form CSS */
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: green;
+  color: antiquewhite;
+  width: 100px;
+  margin: 0px;
+}
+
+#signup {
+  text-align: center;
+}
+
+#login {
+  text-align: center;
+}
+
+
+#logo2 {
+  text-align: center;
+}
+.container2 {
+  text-align: center;
+}
+
+#logo1 {
+  width: 100px;
+  text-align: center;
+  padding-left: 20px;
+  padding-left: 10px;
+}
+
+
+/* my circle css */
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.grid-container1 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+}
+
+.outer-circle {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(
+    43,
+    170,
+    43
+  ); /* You can define the color of your choice */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  width: 350px;
+  height: 350px;
+  background-color: lightskyblue; /* Adjust the color as needed */
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.inner-circle p {
+  text-align: center;
+  font-style: italic;
+  font-size: 220%;
+  color: purple;
+}
+
+.inner-circle a {
+  color: black; /* Adjust the color as needed */
+  background-color: white; /* Adjust the color as needed */
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.inner-circle a:hover {
+  background-color: grey;
+}
+
+#p2 {
+  position: relative;
+  bottom: px;
+  text-align: center;
+  font-size: large;
+  color: blue;
+}
+
+#about-us {
+  background-color: #c8a2c8;
+  color: white; /* Text color */
+  padding: 100px 0; /* Adjust padding as needed */
+  text-align: center;
+  position: relative;
+  bottom: 180px;
+}
+
+.container {
+  max-width: 800px; /* Adjust container width as needed */
+  margin: 0 auto; /* Center align the container */
+  text-align: center; /* Center align text within the container */
+  position: relative;
+  
+}
+
+/* Cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card-content {
+  margin-top: 10px;
+}
+
+.card-content h3 {
+  margin-bottom: 5px;
+}
+
+.card-content p {
+  margin-bottom: 10px;
+}
+
+.card-content a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff; /* Blue color */
+  color: #fff; /* White text color */
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+
+.donthave {
+  text-align: center;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main {
+  margin: 5% auto; /* Responsive margins */
+  max-width: 800px; /* Optional: Set maximum width */
+  height: 500px;
+}
+
+/* dashboard css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.dashboard-section {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.dashboard-section h2 {
+  margin-top: 0;
+}
+
+.dashboard-link {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dashboard-link:hover {
+  color: #555;
+}
+
+/* About */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 20px;
+}
+.highlight {
+  font-weight: bold;
+  color: #007bff;
+}
+ 
+
+/* Sitter css */
+/* Add your CSS styles here */
+.container {
+  max-width: 100%; /* Change from 800px to 100% */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  display: flex; /* Use flexbox to make form items span horizontally */
+  flex-wrap: wrap; /* Allow items to wrap if screen size is too small */
+}
+
+form label {
+  width: 100%; /* Make labels take up full width */
+  margin-bottom: 5px;
+}
+
+form input,
+form select,
+form textarea {
+  flex: 1; /* Make inputs take up remaining space */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+
+/* table */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.form-container {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#registered-babies-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+#registered-babies-table th,
+#registered-babies-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#registered-babies-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+#registered-babies-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#registered-babies-table tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .form-container {
+      padding: 0 10px;
+  }
+
+  form {
+      padding: 10px;
+  }
+}

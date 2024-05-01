@@ -3,257 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/public/images/photo3.jpg"> 
+  <link rel="stylesheet" href="/public/sitecss/home2.css">
+  <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
   <title>DayStar DayCare</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/images/logo.jpeg"> 
 </head>
-<body style="background-color: yellowgreen">
-
-
-  <div class="text-center p-3" style="background-color: lightblue;">
-    <img src="images/logo.jpeg" alt="logo" id="logo1">
-
-    <h1 style="color: purple;">DayStar DayCare</h1>
-      <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">We Strive For The Future</p>
-    </div>
-  <!--My navbar  -->
-  
-  <nav class="navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/index.html" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;">HOME<span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/about.html" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">ABOUT US</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-            PARENTS
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">FEES STRUCTURE</a>
-            <a class="dropdown-item" href="#">APPLICATION FORM</a> 
-            <a class="dropdown-item" href="/pages/store.html">MINICART</a> 
-          </div>
-        
-          <li class="nav-item">
-            <a class="nav-link" href="/pages/signin.html" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">EVENTS and NEWS</a>
-          </li>
-
-            <li class="nav-item dropdown" id ="sign">
-              <a class="nav-link dropdown-toggle" href="/pages/signin.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                Sign In
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/pages/signin.html">As Admin</a>
-                <a class="dropdown-item" href="/parents/signin.html">As Guest</a>
-                
-                
-              </div>
-            </li>
-          </li>
-      </ul> 
-    </div>
-  </nav>
-  
-  
-        <!-- My pics -->
-    <section>
-    <div class="container">
-      <div class="row">
-        <!-- For large screens (col-lg-4) and medium screens (col-md-12) -->
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <img src="/images/buildingphoto.jpg" class="img-fluid" alt="Building Photo" id="buildingphoto">
-        </div>
-        <!-- For small screens (col-12) -->
-        <div class="col">
-        <div class="col-12">
-          <img src="/images/roomphoto.jpg" class="img-fluid" alt="Another Photo">
-        </div>
-        </div>
-        
-        <div class="col">
-          <div class="col-12">
-            <img src="/images/photo2.jpg" class="img-fluid" alt="Another Photo">
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </section>
-  <!-- my circle -->
- <div class="grid-container1">
-  <div class="outer-circle">
-    <div class="inner-circle">
-      <p>A special place for fun and learning</p>
-      <a href="./pages/about.html">Visit Now</a>
-    </div>
-  </div>
+<body>
+<section class="header">
+  <nav>
+    <a href="index.html"><img src="/public/images/LOGO3.jpg"></a>
+    <h2>DayStar DayCare</h2>
+    <div class="nav-links" id="nav-links">
+     <i class="fa fa-times" onclick="hideMenu"></i>
+    <ul>
+      <li><a href="/index.html">HOME</a></li>
+      <li><a href="/pages/about.html">ABOUT</a></li>
+      <li><a href="">PARENTS</a></li>
+      <li><a href="">CONTACT</a></li>
+      <li><a href="/login">SIGNIN</a></li>
+    </ul>
 </div>
+<i class="fa fa-bars" onclick="showMenu()"></i>
+</nav>
+
+<div class="text-box">
+  <h1>A Special Place For Fun And Learning</h1>
+  <p>DayStar Day Care provides quality care and education
+    programs designed for Infants, Preschool, Pre-K
+    and Kindergarten students</p>
+  <a href="" class="hero-btn">Visit Us Now To Know More</a>
+
+</div>
+</section>
+
+<!-- Services -->
+<section class="course">
+  <h1>Services Offered</h1>
+  
+
+    <div class="row">
+      <div class="services-col">
+        <h3>Goals</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci ad dignissimos impedit alias. Eos atque expedita error libero iste illo assumenda at est corporis, sed, a beatae numquam accusantium doloremque?</p>
+      </div>
+      <div class="services-col">
+        <h3>Ambitions</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci ad dignissimos impedit alias. Eos atque expedita error libero iste illo assumenda at est corporis, sed, a beatae numquam accusantium doloremque?</p>
+      </div>
+      <div class="services-col">
+        <h3></h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci ad dignissimos impedit alias. Eos atque expedita error libero iste illo assumenda at est corporis, sed, a beatae numquam accusantium doloremque?</p>
+      </div>
+    </div>
+</section>
 
 
- <h2 id="about-us">DayStar Day Care provides quality care and education <br>programs designed for Infants, Preschool, Pre-K<br> and Kindergarten students</h2> 
-<p id="p2">We believe in a developmental learning philosophy – learning is encouraged through play and discovery</p>
+<!--  -->
+<section class="ourdaycare">
+  <h1>Our Day Care</h1>
 
-    </div>
-
-<!-- more pics -->
-  <section>
-    <div class="container">
-      <div class="row">
-        <!-- For large screens (col-lg-4) and medium screens (col-md-12) -->
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <img src="/images/room3.jpg" class="img-fluid" alt="Building Photo">
-        </div>
-        <!-- For small screens (col-12) -->
-        <div class="col">
-        <div class="col-12">
-          <img src="/images/photo4.jpg" class="img-fluid" style="padding-bottom: 20px;"  alt="Another Photo">
-        </div>
-        </div>
-        <!-- Add more photo divs as needed -->
-        <div class="col">
-          <div class="col-12">
-            <img src="/images/card-3.jpg" class="img-fluid" alt="Another Photo">
-          </div>
-          </div>
-      </div>
-    </div>
-  </section>
-  
-  <div class="grid-container">
-    <div class="card">
-      <img src="/images/CARD 5.png" alt="Photo 1">
-      <div class="card-content">
-        <h3 style="color: purple;">programs</h3>
-        
-        <a href="link1.html">Learn More</a>
-      </div>
-    </div>
-  
-    <div class="card">
-      <img src="/images/BL.jpeg" alt="Photo 5">
-      <div class="card-content">
-        <h3 style="color: purple;"> Activities</h3>
-        
-        <a href="link2.html">Learn More</a>
-      </div>
-    </div>
-  
-    <div class="card">
-      <img src="/images/BABY IN RED.jpeg" alt="Photo 3">
-      <div class="card-content">
-        <h3 style="color: purple;">Gallery</h3>
-        <p></p>
-        <a href="link3.html">Learn More</a>
-      </div>
-    </div>
-  
-    <div class="card">
-      <img src="/images/CARD 4.jpeg" alt="Photo 4">
-      <div class="card-content">
-        <h3 style="color: purple;">Contact Us and Map</h3>
-        
-        <a href="link4.html">Learn More</a>
-      </div>
-    </div>
+  <div class="row">
+    <div class="ourdaycare-col">
+    <img src="/images/photo3.jpg" alt="">
   </div>
-  
-  
+  <div class="ourdaycare-col">
+    <img src="/images/photo2.jpg" alt="">
+  </div>
+  <div class="ourdaycare-col">
+    <img src="/images/about2.jpg" alt="">
+  </div>
+  </div>
+</section>
 
-  
+<!-- Testimonials-->
+<section class="testimonials">
+<h1>What Our Parents Say</h1>
 
-
-  
-  
-
-  
-
-
-
-
-<!-- Footer -->
-  <footer class="text-white text-center text-lg-start" id ="footer">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row mt-4">
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-  
-          <p>
-            Caring. Honesty. Respect. Responsibility. Child Care Excellence. Come. Sit. Play with us! Daycare is great… children make it special.
-          </p>
-
-          <div class="mt-4">
-            
-          </div>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-  
-          <ul class="fa-ul" style="margin-left: 1.65em;">
-            
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">daystardaycare@gmail.com</span>
-            </li>
-
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">0774560634</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Opening hours</h5>
-
-          <table class="table text-center text-white">
-            <tbody class="fw-normal">
-              <tr>
-                <td>Mon - Thu:</td>
-                <td>8am - 9pm</td>
-              </tr>
-              <tr>
-                <td>Fri - Sat:</td>
-                <td>8am - 1am</td>
-              </tr>
-              <tr>
-                <td>Sunday:</td>
-                <td>9am - 10pm</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-      </div>
-      
+<div class="row">
+   <div class="testimonials-col">
+    <img src="/images/father1.jpg">
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt unde quo soluta harum. Numquam, ratione pariatur esse odit, consequatur aperiam debitis voluptate eligendi, dignissimos magnam iure. Dolore alias eaque harum.</p>
+      <h3>Kato Mathew</h3>
+    </div>
+   </div>
+   <div class="testimonials-col">
+    <img src="/images/mother1.jpg">
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt unde quo soluta harum. Numquam, ratione pariatur esse odit, consequatur aperiam debitis voluptate eligendi, dignissimos magnam iure. Dolore alias eaque harum.</p>
+      <h3>Apio Winnie</h3>
     </div>
     
+   </div>
+</div>
+</section>
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: lightblue;">
-      <p id="copy">© Ebiu Julius 2024 </p>
-      </div>
-  
-  </footer>
+<!-- contact -->
 
 
-<!-- For my dropdowns -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<section class="footer">
+  <div class="cta">
+    <h1>Enroll Your Child Now</h1>
+    <a href="" class="hero-btn">CONTACT US</a>
+  </div>
+ <p>© Ebiu Julius 2024</p>
+</section>
 
-
-  <script src="script.js"></script>
-  <script src="css/bootstrap/js/bootstrap.js"></script> 
 </body>
 </html>

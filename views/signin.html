@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DayStar DayCare</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/logo.jpeg"> 
+</head>
+<body style="background-color: lightblue;">
+  
+
+      <!--My navbar  -->
+      
+      <nav class="navbar navbar-expand-lg navbar-light " style="background-color: lightseagreen;">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;">HOME<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/about.html" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">ABOUT US</a>
+            </li>     
+          </ul> 
+        </div>
+      </nav>
+      
+
+  
+    
+  <div class="main">
+    
+    <div class="container2">
+    <img src="/images/logo.jpeg" alt="logo" id="logo2">
+  </div>
+
+  
+    
+  <!-- LOGIN FORM -->
+  <h2 id="login">Login</h2>
+  <form id="loginForm">
+    <div>
+    <p >Username</p>
+    <input type="text" id="loginUsername" placeholder="Username" required><br>
+    <p >Password</p>
+  
+
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </div>
+  </form>
+   
+  <div class="donthave">
+  <p id="donthave">Dont have an account?</p>
+    <a href="/pages/signup.html" type="button" onclick="validateForm()" id="signup"> Sign up</a>
+</div>
+
+
+
+
+  <p id="error-message"></p>
+
+
+  </div>
+    
+
+    
+   
+  
+
+
+
+
+  <!-- For my dropdowns -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="/js/signin.js"></script>
+  <script src="/css/bootstrap/js/bootstrap.js"></script> 
+</body>
+</html>
