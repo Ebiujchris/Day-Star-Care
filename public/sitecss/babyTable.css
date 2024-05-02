@@ -1,9 +1,10 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: lightblue;
+  box-sizing: border-box;
 }
+
+/* Navbar styles */
 .navbar {
   background-color: lightseagreen;
   
@@ -11,45 +12,149 @@ body {
 
 .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
 }
 
-.navbar-brand {
-  color:black;
-  font-size: 24px;
-  text-decoration: none;
+.logo {
+  font-size: 1.5rem;
 }
 
-.nav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.nav-links {
+  list-style: none;
+  display: flex;
 }
 
-.nav-item {
-  display: inline-block;
+.nav-links li {
   margin-right: 20px;
 }
 
-.nav-link {
+.nav-links li a {
   color: black;
   text-decoration: none;
-  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-links li a:hover {
+  color: black;
   text-decoration: underline;
 }
 
+/* Toggle button for mobile */
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.toggle-button span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #333;
+    transition: all 0.5s ease;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0;
+    width: 100%;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .toggle-button.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .toggle-button.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggle-button.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+/* DashBoard*/
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  width: 100%; /* Adjust the value as needed */
+  max-width: 1200px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+.item {
+  background-color: blac;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+.item:hover {
+  background-color: black;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  .navbar {
+    max-width: 100%;
+  }
+
+  label {
+    width: 100%;
+  }
+
+  input,
+  select {
+    width: 100%;
+  }
+}
 .container {
-  width: 50%;
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the sidebar */
+.sidebar {
+  background-color: #333;
+  color: #fff;
+  width: 200px;
+  padding: 20px;
 }
 
 table {
@@ -66,15 +171,15 @@ table td {
 }
 
 table th {
-  background-color: lightskyblue;
+  background-color: lightseagreen;
 }
 
 table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: lightblue;
 }
 
 table tbody tr:hover {
-  background-color: #f0f0f0;
+  background-color: lightgrey;
 }
 
 .actions button {

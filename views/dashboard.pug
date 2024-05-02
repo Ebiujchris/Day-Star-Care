@@ -7,29 +7,44 @@ head
   link(rel='stylesheet' href='/sitecss/dash.css')
   link(rel='icon' type='image/png' href='/images/logo.jpeg')
   nav.navbar
-      .container
-        a.navbar-brand(href='/') Home
-        ul.nav
-          li.nav-item
-            a.nav-link(href='') 
-          li.nav-item
-            a.nav-link(href='babieslist') 
-          li.nav-item
-            a.nav-link(href='#') 
-          li.nav-item
-            a.nav-link(href='#') 
+  .container
+    h1.logo DayStar DayCare
+    ul.nav-links
+      li
+        a(href='/') Home
+      li
+        a(href='#') About
+      li
+        a(href='#') Services
+      li
+        a(href='/index.html') Log Out
+    .toggle-button
+      span
+      span
+      span
 // DASHBOARD
 .dashboard-container
   .sidebar
     h2 DASHBOARD
-    a.item(href='register') Register Baby
-    a.item(href='/AddSItter') Register Sitter
-    a.item(href='babieslist') BABIES
-    a.item(href='') SITTERS
-    a.item(href='') STAFF
-    a.item(href='') RECORDS
+    .dropdown
+      a.item(href='#') Register
+      .dropdown-content
+        a(href='/register') Register Baby
+        a(href='/AddSitter') Register Sitter
+    .dropdown
+      a.item(href='#') Babies
+      .dropdown-content
+        a(href='/babieslist') Babies Registered
+        a(href='') Babies Clock In
+        a(href='') Babies Clock Out
+    .dropdown
+      a.item(href='#') Sitters
+      .dropdown-content
+        a(href='/sitterlist') Sitters Registered
+        a(href='') Sitters On Duty
+        a(href='') Sitters Off Duty
+    a.item(href='#') STAFF
+    a.item(href='#') RECORDS
     a.item(href='/') STORE
-    a.item(href='/index.html') Log Out
-  .content
-    
-    
+    a.item(href='') 
+  

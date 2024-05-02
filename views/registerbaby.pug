@@ -9,10 +9,10 @@ head
 main
 nav.navbar
   .container
-    a.navbar-brand(href='/') Babies
+    a.navbar-brand(href='/') Home
     ul.nav
       li.nav-item
-        a.nav-link(href='/') Home
+        a.nav-link(href='/babieslist') Babies
       li.nav-item
         a.nav-link(href='dashboard') DashBoard 
       li.nav-item
@@ -32,35 +32,29 @@ nav.navbar
     label(for='age') Age:
     input#age(type='number' name='age' required='')
     br
-    label(for='location') Location:
-    input#location(type='text' name='location' required='')
-    br
-    label(for='personName') Person Bringing the Baby:
-    input#name(type='text' name='name' required='')
-    br
-    label(for='arrivalTime') Time of Arrival:
-    input#arrivalTime(type='time' name='arrivalTime' required='')
-    br
-    label(for='personName') Person Picking the Baby:
-    input#name(type='text' name='name' required='')
-    br
-    label(for='departureTime') Time of Departure:
-    input#departureTime(type='time' name='departureTime' required='')
-    br
     label(for='parent1Name') Parent 1 Name:
     input#name(type='text' name='parent1Name' required='')
     br
     label(for='parent2Name') Parent 2 Name:
     input#name(type='text' name='parent2Name' required='')
     br
-    label(for='fee') Fee (Ugx):
-    input#fee(type='number' name='fee' required='')
-    br
-    label(for='periodOfStay') Period of Stay:
-    input#periodOfStay(type='text' name='periodOfStay' required='')
+    label(for='location') Location:
+    input#location(type='text' name='location' required='')
     br
     label(for='babyNumber') Baby Number:
     input#babyNumber(type='text' name='babyNumber' required='')
+    br
+    label(for='personName') Person Bringing the Baby:
+    input#droppedBy(type='text' name='droppedBy' required='')
+    br
+    label(for='arrivalTime') Time of Arrival:
+    input#arrivalTime(type='time' name='arrivalTime' required='')
+    br
+    label(for='pickedBy') Person Picking the Baby:
+    input#name(type='text' name='pickedBy' required='')
+    br
+    label(for='departureTime') Time of Departure:
+    input#departureTime(type='time' name='departureTime' required='')
     br
     label(for='contacts') Contacts:
     input#contacts(type='text' name='contacts' required='')

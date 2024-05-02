@@ -5,7 +5,7 @@ const registerBabySchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: true,
-    unique: true // Ensure unique full names
+    unique: true 
   },
   gender: {
     type: String,
@@ -19,7 +19,15 @@ const registerBabySchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  droppedBy:{
+    type: String,
+    trim :true
+  },
   arrivalTime: {
+    type: String,
+    trim: true
+  },
+  pickedBy:{
     type: String,
     trim: true
   },
@@ -37,16 +45,20 @@ const registerBabySchema = new mongoose.Schema({
     trim: true
   },
   fee: {
-    type: String,
+    type: Number,
     trim: true
   },
+  // Sitter:{
+  //   type: mongoose.Schema.Types.ObectId,
+  //   ref: "RegisterStaff"
+  // },
   periodOfStay: {
     type: String,
     trim: true
   },
   babyNumber: {
     type: Number,
-    unique: true 
+    
   },
   contacts: [{
     type: String,
