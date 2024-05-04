@@ -1,73 +1,60 @@
-// JavaScript
-let cart = [];
+const uploadForm = document.getElementById('uploadForm');
+    const dollImagesContainer = document.getElementById('dollImagesContainer');
 
-function addItem(itemName, price) {
-    const itemIndex = cart.findIndex(item => item.name === itemName);
-    if (itemIndex !== -1) {
-        cart[itemIndex].quantity++;
-    } else {
-        cart.push({ name: itemName, price: price, quantity: 1 });
-    }
-    updateCart();
-}
-
-function updateCart() {
-    const cartDiv = document.getElementById('cart');
-    cartDiv.innerHTML = '';
-    let totalPrice = 0;
-    cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        totalPrice += itemTotal;
-        cartDiv.innerHTML += `
-            <div class="cart-item">
-                <p>${item.name} - UGX${item.price} x ${item.quantity}</p>
-                <p>Total: UGX${itemTotal}</p>
-                <button onclick="removeItem('${item.name}')">Remove</button>
-            </div>
-        `;
+    uploadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(uploadForm);
+      try {
+        const response = await fetch('/upload', {
+          method: 'POST',
+          body: formData
+        });
+        if (response.ok) {
+          const imageURL = await response.text();
+          createCard(imageURL);
+        } else {
+          console.error('Failed to upload image');
+        }
+      } catch (error) {
+        console.error(error);
+      }
     });
-    cartDiv.innerHTML += `<p>Total Price: UGX${totalPrice}</p>`;
-}
 
-function removeItem(itemName) {
-    const itemIndex = cart.findIndex(item => item.name === itemName);
-    if (itemIndex !== -1) {
-        cart.splice(itemIndex, 1);
-        updateCart();
+    function createCard(imageURL) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+
+      const img = document.createElement('img');
+      img.src = imageURL;
+      img.classList.add('card-img-top');
+      card.appendChild(img);
+
+      const cardBody = document.createElement('div');
+      cardBody.classList.add('card-body');
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Delete';
+      deleteBtn.classList.add('btn', 'btn-danger');
+      deleteBtn.addEventListener('click', async () => {
+        try {
+          const response = await fetch('/delete', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ imageURL })
+          });
+          if (response.ok) {
+            card.remove();
+          } else {
+            console.error('Failed to delete image');
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+
+      cardBody.appendChild(deleteBtn);
+      card.appendChild(cardBody);
+      dollImagesContainer.appendChild(card);
     }
-}
-
-
-// JavaScript
-
-// Checkout Functionality
-document.getElementById('checkoutBtn').addEventListener('click', function() {
-  const selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-  if (selectedPaymentMethod === 'mobileMoney') {
-      showMobileMoneyPopup();
-  } else if (selectedPaymentMethod === 'onlinePayment') {
-      // Implement online payment functionality here
-  } else if (selectedPaymentMethod === 'cashOnDelivery') {
-      // Implement cash on delivery functionality here
-  }
-});
-
-// Show Mobile Money Popup
-function showMobileMoneyPopup() {
-  const paymentPopup = document.getElementById('paymentPopup');
-  paymentPopup.innerHTML = `
-      <h3>Mobile Money Payment</h3>
-      <!-- Mobile money payment form fields -->
-      <input type="text" placeholder="Mobile Money Number"><br>
-      <input type="password" placeholder="PIN"><br>
-      <button onclick="processMobileMoneyPayment()">Pay</button>
-  `;
-  paymentPopup.style.display = 'block';
-}
-
-// Process Mobile Money Payment
-function processMobileMoneyPayment() {
-  // Implement mobile money payment processing here
-  alert('Mobile money payment processed successfully');
-  document.getElementById('paymentPopup').style.display = 'none';
-}

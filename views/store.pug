@@ -1,0 +1,12 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Kids Doll Store
+  link(rel='stylesheet' href='/sitecss/store.css')
+h1 Kids Doll Store
+form#uploadForm(action='/upload' method='POST' enctype='multipart/form-data')
+  input#dollImageInput(type='file' name='dollImage' accept='image/*' required='')
+  button(type='submit') Upload Doll Image
+#dollImagesContainer.card-container
+script(scr='public/js/store.js').

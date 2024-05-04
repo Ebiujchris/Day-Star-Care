@@ -43,8 +43,18 @@ head
         a(href='/sitterlist') Sitters Registered
         a(href='') Sitters On Duty
         a(href='') Sitters Off Duty
-    a.item(href='#') STAFF
-    a.item(href='#') RECORDS
+    .dropdown
+      a.item(href='#') STAFF
+      .dropdown-content
+        a(href='/sitterlist') Sitters Registered
+        a(href='') Sitters On Duty
+        a(href='') Sitters Off Duty
+    .dropdown
+      a.item(href='#') RECORDS
+      .dropdown-content
+        a(href='') Payments
+        a(href='') Revenue
+        a(href='') Sitters Off Duty
     a.item(href='/') STORE
     a.item(href='') 
   
