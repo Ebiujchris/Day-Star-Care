@@ -3,18 +3,17 @@ const router = express.Router();
 const passport = require("passport");
 
 // //import model
-const RegisterStaff = require("../models/RegisterStaff");
+const SignUp = require("../models/SignupModel");
 
 
 router.get("/signup", (req, res) => {
-  res.render("adminReg");
+  res.render("signup");
 });
 
 router.post("/signup", async(req, res) => {
   try {
-      const signup = new RegisterStaff(req.body);
-      console.log(signup)
-      await RegisterStaff.register(signup,req.body.password,(err)=>{
+      const signup = new SignUp(req.body);
+      await SignUp.register(signup,req.body.password,(err)=>{
           if(err){
               throw err
           }

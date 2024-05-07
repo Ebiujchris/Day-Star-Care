@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/sitecss/baby.css')
+    link(rel='icon', type='image/png', href='/images/logo.jpeg')
+  body
+    main
+      nav.navbar
+        .container
+          a.navbar-brand(href='/') Home
+          ul.nav
+            li.nav-item
+              a.nav-link(href='/babieslist') Babies
+            li.nav-item
+              a.nav-link(href='dashboard')
+            li.nav-item
+              a.nav-link(href='#') 
+            li.nav-item
+              a.nav-link(href='#') 
+      h1 
+      form#babyForm(action="/babyClockIn" method="POST")
+        label(for='babyName') Full Name:
+        input#name(type='text' name='fullName' value= baby.name readonly)
+        br
+        label(for='gender') Gender:
+        select#gender(name='gender' readonly)
+          option(value='male') Male
+          option(value='female') Female
+        br
+        label(for='age') Age:
+        input#age(type='number' name='age', readonly)
+        br
+        label(for='babyNumber') Baby Number:
+        input#babyNumber(type='text', name='babyNumber' readonly)
+        br
+        label(for='sitter') Choose Sitter:
+        select#sitter(name='sitter')
+          if sitters.length
+            each sitter in sitters 
+              option(value=sitter_id) #{sitter.name}
+        small#sitterErr
+        label(for='time') Time to Spend:
+        select#time(name='time')
+          option(value='halfday') Half Day
+          option(value='fullday') Full Day
+      
+        label(for='fee') Fee (UGX):
+        select#fee(name='fee')
+          option(value='10000') 10,000 UGX
+          option(value='15000') 15,000 UGX
+      
+        label(for='broughtBy') Brought By:
+        input#broughtBy(type='text' name='broughtBy')
+        
+        label(for='arrivalTime') Time of Arrival:
+        input#arrivalTime(type='time' name='arrivalTime')
+ 
+        input#status(type='hidden' name='status' value="ClockedIn")
+        
+        input(type='submit', value='Register')
+        br
+    footer.footer
+      .container1 
+        p Copyright © 2024 Ebiu Julius. All rights reserved.

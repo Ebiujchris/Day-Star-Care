@@ -155,10 +155,10 @@ body {
 .dashboard-container {
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 50px;
   width: 100%; /* Adjust the value as needed */
   max-width: 1200px; /* Limit the maximum width */
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 20px auto; 
 }
 
 .content {

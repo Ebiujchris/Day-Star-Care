@@ -1,0 +1,64 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet', href='/sitecss/babyTable.css')
+    link(rel='icon', type='image/png', href='/images/logo.jpeg')
+    link(href='/css/bootstrap/css/bootstrap.css', rel='stylesheet')
+  body
+    nav.navbar
+      .container
+        a.navbar-brand(href='/') Home
+        ul.nav
+          li.nav-item
+            a.nav-link(href='register') Add Baby
+          li.nav-item
+            a.nav-link(href='dashboard') DashBoard 
+          li.nav-item
+            a.nav-link(href='#')
+          li.nav-item
+            a.nav-link(href='dashboard')
+    table#babyTable
+      thead
+        tr
+          th Name
+          th Gender
+          th Age 
+          th Baby Number 
+          th Sitter
+          th Amount Paid
+          th Dropped By
+          th Time
+          th Status
+          th Clock Out
+          th Update 
+          th Delete 
+          
+      tbody
+        // Iterate over each baby and display their information
+        if babies.length
+        each baby in babies
+          tr
+            td #{baby.fullName}
+            td #{baby.gender}
+            td #{baby.age}
+            td #{baby.parent1Name}
+            td #{baby.location}
+            td #{baby.babyNumber}
+            td #{baby.contacts}
+            td #{baby.status}
+            // Check-in/Check-out button based on baby status
+            td
+              a.btn.btn-secondary.btn-sm(href='/babyClockout/'+baby._id) Clock Out
+                
+            // Update button
+            td
+              a.btn.btn-primary.btn-update(href="/babiesUpdate/"+baby._id) Update
+            // Delete button
+            td
+              form(method='POST', action='/delete')
+                input(type='hidden', name='id', value=baby._id)
+                button.btn.btn-danger(type='submit') Delete
+    

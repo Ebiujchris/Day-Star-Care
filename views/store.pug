@@ -1,12 +1,39 @@
 doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Kids Doll Store
-  link(rel='stylesheet' href='/sitecss/store.css')
-h1 Kids Doll Store
-form#uploadForm(action='/upload' method='POST' enctype='multipart/form-data')
-  input#dollImageInput(type='file' name='dollImage' accept='image/*' required='')
-  button(type='submit') Upload Doll Image
-#dollImagesContainer.card-container
-script(scr='public/js/store.js').
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Shopping Site
+    link(rel='stylesheet', href='/sitescss/store.css')
+  body
+    header
+      h1 Shopping Site
+    main
+      section#addItemForm
+        h2 Add Item
+        form(action='/addItem', method='POST', enctype='multipart/form-data')
+          label(for='itemName') Name:
+          input#itemName(type='text', name='itemName', required)
+          label(for='itemDescription') Description:
+          textarea#itemDescription(name='itemDescription', rows='4', required)
+          label(for='itemPrice') Price:
+          input#itemPrice(type='number', name='itemPrice', required)
+          label(for='itemImage') Image:
+          input#itemImage(type='file', name='itemImage', accept='image/*', required)
+          button(type='submit') Add Item
+      section#itemList
+        h2 Items for Sale
+        if items.length
+          each item in items
+            .card
+              h3=item.name
+              p=item.description
+              p Price: #{item.price}
+              img(src=`/images/${item.image}`, alt=item.name) // Assuming images are stored in 'images' folder
+              form(action='/deleteItem', method='POST')
+                input(type='hidden', name='itemId', value=item._id)
+                button(type='submit') Delete
+        else
+          p No items available for sale.
+    footer
+      p Copyright © 2024 Your Company. All rights reserved.

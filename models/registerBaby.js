@@ -4,8 +4,6 @@ const registerBabySchema = new mongoose.Schema({
   fullName: {
     type: String,
     trim: true,
-    required: true,
-    unique: true 
   },
   gender: {
     type: String,
@@ -13,7 +11,7 @@ const registerBabySchema = new mongoose.Schema({
   },
   age: {
     type: Number,
-  
+    trim: true
   },
   location: {
     type: String,
@@ -38,7 +36,6 @@ const registerBabySchema = new mongoose.Schema({
   parent1Name: {
     type: String,
     trim: true,
-    required: true
   },
   parent2Name: {
     type: String,
@@ -48,23 +45,22 @@ const registerBabySchema = new mongoose.Schema({
     type: Number,
     trim: true
   },
-  // Sitter:{
-  //   type: mongoose.Schema.Types.ObectId,
-  //   ref: "RegisterStaff"
-  // },
   periodOfStay: {
     type: String,
     trim: true
   },
   babyNumber: {
     type: Number,
-    
+    Unique: true  
   },
-  contacts: [{
+  contacts: {
+    type: Number,
+    trim: true
+  },
+  status: {
     type: String,
-    trim: true,
-    required: true
-  }]
+    trim: true
+  }
 });
 
 module.exports = mongoose.model("Register", registerBabySchema);

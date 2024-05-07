@@ -3,8 +3,7 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title DayStar DayCare
-  link(rel='stylesheet' href='/sitecss/update.css')
-  link(href='/css/bootstrap/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='/sitecss/baby.css')
   link(rel='icon' type='image/png' href='/images/logo.jpeg')
 // Main Content
 main
@@ -18,7 +17,7 @@ nav.navbar
         a.nav-link(href='/dashboard') Dashboard
   form#babyForm(action="register" method="POST")
     label(for='babyName') Full Name:
-    input#name(type='text' name='fullName' required='')
+    input#name(type='text' name='fullName')
     br
     label(for='gender') Gender:
     select#gender(name='gender')
@@ -26,45 +25,23 @@ nav.navbar
       option(value='female') Female
     br
     label(for='age') Age:
-    input#age(type='number' name='age' required='')
+    input#age(type='number' name='age')
     br
     label(for='location') Location:
-    input#location(type='text' name='location' required='')
-    br
-    label(for='personName') Person Bringing the Baby:
-    input#name(type='text' name='name' required='')
-    br
-    label(for='arrivalTime') Time of Arrival:
-    input#arrivalTime(type='time' name='arrivalTime' required='')
-    br
-    label(for='personName') Person Picking the Baby:
-    input#name(type='text' name='name' required='')
-    br
-    label(for='departureTime') Time of Departure:
-    input#departureTime(type='time' name='departureTime' required='')
+    input#location(type='text' name='location')
     br
     label(for='parent1Name') Parent 1 Name:
-    input#name(type='text' name='parent1Name' required='')
+    input#name(type='text' name='parent1Name')
     br
     label(for='parent2Name') Parent 2 Name:
-    input#name(type='text' name='parent2Name' required='')
-    br
-    label(for='fee') Fee (Ugx):
-    input#fee(type='number' name='fee' required='')
-    br
-    label(for='periodOfStay') Period of Stay:
-    input#periodOfStay(type='text' name='periodOfStay' required='')
+    input#name(type='text' name='parent2Name')
     br
     label(for='babyNumber') Baby Number:
-    input#babyNumber(type='text' name='babyNumber' required='')
+    input#babyNumber(type='text' name='babyNumber')
     br
     label(for='contacts') Contacts:
-    input#contacts(type='text' name='contacts' required='')
+    input#contacts(type='text' name='contacts' )
     br
-    .comments-section
-      label(for='comments') Comments:
-      br
-      textarea#comments(rows='4' name='comments')
     input(type='submit' value='Register')
     br
     br

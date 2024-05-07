@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 
-const createAccountSchema = new mongoose.Schema({
+const signupSchema = new mongoose.Schema({
   name:{
     type: String,
     trim: true
@@ -18,31 +18,28 @@ const createAccountSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  contact: [{
+  contact: {
     type: String,
     trim: true
-  }],
+  },
   
   nextOfKin:{
     type: String,
     trim: true
   },
-  nextOfKinContact:{
-    type: String,
-    trim: true
-  },
+ 
   email: {
     type: String,
     unique: true,
   },
-  //  password:{
-  //    type:String,   delete password.only exists in db
-  //    trim:true
-  //  },                    
+  password:{
+    type : String,
+    trim: true
+   },                    
 });
 
-createAccountSchema.plugin(passportLocalMongoose, {
+signupSchema.plugin(passportLocalMongoose, {
   usernameField: "email",
 });
 
-module.exports = mongoose.model("RegisterStaff", createAccountSchema);
+module.exports = mongoose.model("SignUp", signupSchema);

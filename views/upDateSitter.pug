@@ -19,39 +19,39 @@ head
   form(action='/AddSItter' method='POST' onsubmit='return validateForm()')
     div
       label(for='name') Name:
-      input#name(type='text' name='name' )
+      input#name(type='text' name='name' required='')
     div
       label(for='location') Location:
-      input#location(type='text' name='location')
+      input#location(type='text' name='location' required='')
     div
       label(for='age') Age:
-      input#age(type='number' name='age' )
+      input#dob(type='number' name='age' required='')
     div
       label(for='gender') Gender:
-      select#gender(name='gender')
+      select#gender(name='gender' required='')
         option(value='male') Male
         option(value='female') Female
     div
       label(for='nextOfKin') Next of Kin:
-      input#nextOfKin(type='text' name='nextOfKin')
+      input#nextOfKin(type='text' name='nextOfKin' required='')
     div
       label(for='nin') NIN:
-      input#nin(type='text' name='nin')
+      input#nin(type='text' name='nin' required='')
     div
       label(for='recommender') Recommender's Name:
-      input#recommender(type='text' name='recommender')
+      input#recommender(type='text' name='recommender' required='')
     div
       label(for='religion') Religion:
       input#religion(type='text' name='religion')
     div
       label(for='education') Level of Education:
-      input#education(type='text' name='education')
+      input#education(type='text' name='education' required='')
     div
       label(for='sitterNumber') Sitter Number:
-      input#sitterNumber(type='text' name='sitterNumber')
+      input#sitterNumber(type='text' name='sitterNumber' required='')
     div
       label(for='contacts') Contacts:
-      input#contacts(type='text' name='contacts')
+      input#contacts(type='text' name='contacts' required='')
     div
     button(type='submit') Register
     footer.footer

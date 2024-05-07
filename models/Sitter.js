@@ -9,9 +9,9 @@ const SitterSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  dob: {
-    type: Date,
-  
+  age: {
+    type: Number,
+    trim : true
   },
   gender: {
     type: String,

@@ -12,18 +12,17 @@ const expressSession = require("express-session")({
 
 require("dotenv").config();
 
-//import signuproute with user details
-const RegisterStaff = require("./models/RegisterStaff");
+// signuproute with user details
+const SignUp = require("./models/SignupModel");
 
-const port = 3000;
+const port = 4000;
 
 //for importing routes
 const registerBabyRoutes = require("./routes/registerBabyRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
-const createAccountRoutes = require("./routes/createAccountRoutes");
+const SignUpRoutes = require("./routes/SignUpRoutes");
 const authenticationRoutes = require("./routes/authenticationRoutes");
 const addSitterRoutes = require("./routes/registerSitterRoutes");
-
 
 //Instantiations
 const app = express();
@@ -49,6 +48,8 @@ app.set("views", path.join(__dirname, "views")); //specify the directory where t
 app.use(express.static(path.join(__dirname, "public"))); //set for directory static files
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '/')));
+
 
 //expression session config
 app.use(expressSession);
@@ -56,15 +57,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //passport config
-passport.use(RegisterStaff.createStrategy());
-passport.serializeUser(RegisterStaff.serializeUser());
-passport.deserializeUser(RegisterStaff.deserializeUser());
+passport.use(SignUp.createStrategy());
+passport.serializeUser(SignUp.serializeUser());
+passport.deserializeUser(SignUp.deserializeUser());
 
 //use imported routes
 app.use("/", registerBabyRoutes);
 app.use("/", dashboardRoutes);
-app.use(express.static(path.join(__dirname, '/')));
-app.use("/", createAccountRoutes);
+app.use("/", SignUpRoutes);
 app.use("/",authenticationRoutes);
 app.use("/",addSitterRoutes);
 

@@ -14,7 +14,7 @@ try {
   const sitter = new Sitter(req.body)
   console.log(sitter);
   await sitter.save();
-  res.redirect("/dashboard");
+  res.redirect("/sitterlist");
 
 } catch (error) {
   res.status(400).send("error, sitter no registered")
@@ -33,13 +33,13 @@ router.get("/sitterlist",async(req, res)=>{
 });
 
 //deleting
-router.post("/delete",async(rea, res)=>{
+router.post("/delete",async(req, res)=>{
   try {
     await Sitter.deleteOne({_id:req.body.id});
     res.redirect("back");
 
   } catch (error) {
-    res.status(400).send("Unable to delete sitter ffrom db")
+    res.status(400).send("Unable to delete sitter from db")
     console.log("Error deleting sitter..",error);
   }
 });
@@ -48,11 +48,21 @@ router.post("/delete",async(rea, res)=>{
 router.get("/sitterUpdate/:id",async(req, res)=>{
   try {
     const sitterUpdate = await Sitter.findOne({_id: req.params.id});
-    res.render("Update-sitter",{sitter:sitterUpdate})
+    res.render("upDateSitter",{sitter:sitterUpdate})
 
   } catch (error) {
     console.log("error finding sitter!",error);
     res.status(400).send('unable to find baby from db!');
+  }
+})
+
+router.post("/sitterUpdate", async(req, res)=> {
+  try {
+     await Sitter.findOneAndUpdate({_id: req.query.id}, req.body);
+     res.redirect("/sitterlist");
+
+  } catch (error) {
+     res.status(404).send("unable to update baby in the db!");  
   }
 })
 module.exports = router;

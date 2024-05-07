@@ -2,20 +2,22 @@ const express = require("express");
 const router = express.Router();
 
 //import model
+const Sitter = require("../models/Sitter");
+
 const Register = require("../models/registerBaby");
+
 
 router.get("/register",(req, res)=>{
   res.render("registerbaby");
 });
 
 //post route 
-//using the async function
 router.post("/register", async(req, res)=>{
   try{
     const baby = new Register(req.body)
     console.log(baby);
     await baby.save();
-    res.redirect("/register");
+    res.redirect("/babieslist");
     
   } catch (error) {
      res.status(400).send("error, baby not registered")
@@ -28,7 +30,7 @@ router.post("/register", async(req, res)=>{
 router.get("/babieslist",async(req, res)=>{
   try{
     let babies = await Register.find()
-    res.render("checkedin",{babies:babies})
+    res.render("babiesregistered",{babies:babies})
   } catch (error) {
      res.status(400).send("unable to fetch babies from database")
   }
@@ -70,4 +72,46 @@ router.post("/babiesUpdate", async(req, res)=> {
   }
 })
 
+//fetch clocked in babies
+router.get("/babiesClockedin", async (req, res)=>{
+  try {
+    let babies = await Register.find({status: "ClockedIn"})
+    res.render("clockedinbabies", {babies:babies})
+    console.log("babies clocked In", babies);
+
+  } catch (error) {
+    res.status(400).send("unable to find baby!")
+    console.log("unable to find babies in db", error);
+    
+  }
+})
+
+//clockin baby route for form
+router.get("/babyClockIn/:id", async(req,res)=> {
+  try {
+    const sitters = await Sitter.find()
+    const babyClockin = await Register.findOne({_id: req.params.id});
+    res.render("clockinForm", {
+      baby:babyClockin,
+      sitters:sitters
+    });
+
+  } catch (error) {
+    console.log("error finding baby!", error);
+    res.status(400).send("unable to find baby from db");
+  }
+})
+
+router.post("/babyClockIn", async(req,res)=> {
+  try {
+    await Register.findOneAndUpdate({_id: req.query.id}, req.body);
+    res.redirect("clockedinbabies");
+
+  } catch (error) {
+    res.status(404).send("unable to update")
+  }
+})
+
+
+//clock Out baby route
 module.exports = router;
