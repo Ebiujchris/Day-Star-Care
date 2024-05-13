@@ -46,7 +46,22 @@ const SitterSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  
+  status: {
+    type: String,
+    trim: true
+  },
+  babiesAssigned: {
+    type: Number,
+    trim: true
+  },
+  amountPaid: {
+    type: Number,
+    trim: true
+  },
+  dateOfPayment: {
+    type: Date,
+    trim: true
+  }
 });
 
 module.exports = mongoose.model("Sitter", SitterSchema);

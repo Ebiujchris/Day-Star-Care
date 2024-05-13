@@ -1,11 +1,10 @@
-doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title DayStar DayCare
     link(rel='stylesheet', href='/sitecss/sittertable.css')
-    link(rel='icon', type='image/png' href='/public/images/photo3.jpg')
+    link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
 
   body
     // Main Content
@@ -15,22 +14,13 @@ html(lang='en')
           a.navbar-brand(href='/') Home
           ul.nav  
             li.nav-item
-              a.nav-link(href='dashboard') DashBoard 
-
+              a.nav-link(href='dashboard') Dashboard 
       table#sitterTable 
         thead 
           tr 
             th Name 
-            th Location 
-            th Age 
             th Gender 
-            th Next Of Kin
-            th NIN
-            th Recommender's Name
-            th Religion
-            th Level of Education
             th Sitter Number
-            th Contact
             th Status
             th Clock In
             th Update
@@ -40,20 +30,12 @@ html(lang='en')
             each sitter in sitters
               tr 
                 td #{sitter.name}
-                td #{sitter.location}
-                td #{sitter.age}
                 td #{sitter.gender}
-                td #{sitter.nextOfKin}
-                td #{sitter.nin}
-                td #{sitter.recommender}
-                td #{sitter.religion}
-                td #{sitter.education}
                 td #{sitter.sitterNumber}
-                td #{sitter.contacts}
                 td #{sitter.status}
-                // Update button
+                
                 td
-                  a.btn.btn-secondary.btn-sm(href='/sitterClockIn/'+sitter._id) ClockIn
+                  a.btn.btn-secondary.btn-sm(href='/sitterClockin/'+sitter._id) Clock In
                 td
                   a.btn.btn-primary.btn-update(href="/sitterUpdate/"+sitter._id) Update 
                 // Delete button

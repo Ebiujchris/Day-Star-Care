@@ -5,7 +5,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Document
     link(rel='stylesheet', href='/sitecss/babyTable.css')
-    link(rel='icon', type='image/png', href='/images/logo.jpeg')
+    link(rel='icon', type='image/png', href='/images/photo3.jpg')
     
   body
     nav.navbar
@@ -15,7 +15,7 @@ html
           li.nav-item
             a.nav-link(href='register') Add Baby
           li.nav-item
-            a.nav-link(href='dashboard') 
+            a.nav-link(href='') 
           li.nav-item
             a.nav-link(href='#')
           li.nav-item
@@ -50,9 +50,9 @@ html
               td #{baby.contacts}
               td #{baby.status}
               td
-                a.btn.btn-secondary.btn-sm(href='/babyClockin/'+baby._id) Clock In
+                a.btn.btn-secondary.btn-b(href='/babyClockin/'+baby._id) Clock In
               td
-                a.btn.btn-secondary.btn-sm(href='/babyClockin/'+baby._id) Clock Out
+                a.btn.btn-secondary.btn-sm(href='/babyClockOut/'+baby._id) Clock Out
               td
                 a.btn.btn-primary.btn-update(href="/babiesUpdate/"+baby._id) Update
               td

@@ -1,144 +1,46 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-/* Navbar styles */
+/* Style for navigation bar */
+body {
+  background-color: lightblue;
+}
 .navbar {
   background-color: lightseagreen;
-  
+  padding: 10px 0;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
+  justify-content: space-between;
 }
 
-.logo {
-  font-size: 1.5rem;
+.navbar-brand {
+  color:black;
+  font-size: 24px;
+  text-decoration: none;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links li {
+.nav-item {
+  display: inline-block;
   margin-right: 20px;
 }
 
-.nav-links li a {
+.nav-link {
   color: black;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 18px;
 }
 
-.nav-links li a:hover {
-  color: black;
+.nav-link:hover {
   text-decoration: underline;
 }
 
-/* Toggle button for mobile */
-.toggle-button {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.toggle-button span {
-  height: 3px;
-  width: 25px;
-  background-color: #fff;
-  margin: 4px;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Media query for responsive design */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background-color: #333;
-    transition: all 0.5s ease;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 0;
-    width: 100%;
-  }
-
-  .toggle-button {
-    display: flex;
-  }
-
-  .toggle-button.active span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .toggle-button.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .toggle-button.active span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-}
-/* DashBoard*/
-.dashboard-container {
-  display: flex;
-  justify-content: center;
-  padding: 30px;
-  width: 100%; /* Adjust the value as needed */
-  max-width: 1200px; /* Limit the maximum width */
-  margin: 0 auto; /* Center the container horizontally */
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-}
-.item {
-  background-color: blac;
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: block;
-  text-decoration: none;
-  color: #333;
-}
-.item:hover {
-  background-color: black;
-}
-
-/* Media Queries */
-@media screen and (max-width: 600px) {
-  .navbar {
-    max-width: 100%;
-  }
-
-  label {
-    width: 100%;
-  }
-
-  input,
-  select {
-    width: 100%;
-  }
-}
 .container {
   width: 100%;
   max-width: 600px;
@@ -149,60 +51,95 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the sidebar */
-.sidebar {
-  background-color: #333;
-  color: #fff;
-  width: 200px;
-  padding: 20px;
-}
 
-table {
+
+
+button {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-table th,
-table td {
   padding: 10px;
-  border: 1px solid black;
-  text-align: left;
-}
-
-table th {
-  background-color: lightseagreen;
-}
-
-table tbody tr:nth-child(even) {
-  background-color: lightblue;
-}
-
-table tbody tr:hover {
-  background-color: lightgrey;
-}
-
-.actions button {
-  padding: 5px 10px;
-  margin-right: 5px;
+  background-color: rgb(180, 61, 61);
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.actions button:hover {
+button:hover {
+  background-color:gray;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  form {
+    max-width: 100%;
+  }
+  
+  label {
+    width: 100%;
+  }
+  
+  input,
+  select {
+    width: 100%;
+  }
+}
+
+/* Apply basic styles to the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Style the table header */
+thead {
+  background-color: #f2f2f2;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row background color for better readability */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for table rows */
+tbody tr:hover {
   background-color: #ddd;
 }
 
-button {
-  background-color: green;
-  padding: 10px 50px;
-  margin: 10px;
+/* Apply styles to the update button */
+.btn-update {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
 
+.btn-update:hover {
+  background-color: #0056b3;
+}
 
-
-
+.btn-sm {
+  text-decoration: none;
+  color: #fff;
+  background-color: gray;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+.btn-b{
+  text-decoration: none;
+  color: #fff;
+  background-color: green;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
 
 

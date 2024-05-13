@@ -15,34 +15,37 @@ nav.navbar
         a.nav-link(href='#') 
       li
         a.nav-link(href='/dashboard') Dashboard
-  form#babyForm(action="register" method="POST")
+  form#babyForm(action="/babiesUpdate?id="+baby._id method="POST")
     label(for='babyName') Full Name:
-    input#name(type='text' name='fullName')
+    input#name(type='text' name='fullName' value=baby.fullName)
     br
     label(for='gender') Gender:
-    select#gender(name='gender')
+    select#gender(name='gender' value=baby.gender)
       option(value='male') Male
       option(value='female') Female
     br
     label(for='age') Age:
-    input#age(type='number' name='age')
+    input#age(type='number' name='age' value=baby.age)
     br
     label(for='location') Location:
-    input#location(type='text' name='location')
+    input#location(type='text' name='location' value=baby.location)
     br
     label(for='parent1Name') Parent 1 Name:
-    input#name(type='text' name='parent1Name')
+    input#name(type='text' name='parent1Name' value=baby.parent2Name)
     br
     label(for='parent2Name') Parent 2 Name:
-    input#name(type='text' name='parent2Name')
+    input#name(type='text' name='parent2Name' value=baby.parent2Name)
     br
     label(for='babyNumber') Baby Number:
-    input#babyNumber(type='text' name='babyNumber')
+    input#babyNumber(type='text' name='babyNumber' value=baby.babyNumber)
     br
     label(for='contacts') Contacts:
-    input#contacts(type='text' name='contacts' )
+    input#contacts(type='text' name='contacts' value=baby.contacts)
     br
-    input(type='submit' value='Register')
+    input(type='submit' value='Update')
     br
     br
+    footer.footer
+  .container1 
+    p Copyright © 2024 Ebiu Julius. All rights reserved.
 

@@ -1,0 +1,46 @@
+doctype html
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/sitecss/babyTable.css')
+    link(rel='icon', type='image/png', href='/public/images/daycare-icon.png')
+
+  body
+    main
+      nav.navbar
+        .container
+          a.navbar-brand(href='/') Home
+          ul.nav  
+            li.nav-item
+              a.nav-link(href='dashboard') DashBoard 
+
+      table
+        thead
+          tr
+            th Item Type
+            th Item Name
+            th Quantity
+            th Price
+            th Purchase Date
+        
+        tbody
+          if items.length > 0
+            each item in items
+              tr
+                td #{item.itemType}
+                td #{item.itemName}
+                td #{item.quantity}
+                td #{item.price}
+                td #{item.purchaseDate}
+          
+          tr
+            td(colspan="4")
+            td Total Price:
+            td 
+              - let totalPrice = 0
+              - for (let item of items)
+                - totalPrice += parseFloat(item.price) // Ensure item.price is parsed as a float
+              | $#{totalPrice.toFixed(2)}

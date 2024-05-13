@@ -9,6 +9,7 @@ const expressSession = require("express-session")({
   resave: false,
   saveUninitialized: false,
 });
+  
 
 require("dotenv").config();
 
@@ -23,6 +24,8 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 const SignUpRoutes = require("./routes/SignUpRoutes");
 const authenticationRoutes = require("./routes/authenticationRoutes");
 const addSitterRoutes = require("./routes/registerSitterRoutes");
+const purchaseRoutes = require("./routes/purchaseRoutes");
+
 
 //Instantiations
 const app = express();
@@ -67,6 +70,8 @@ app.use("/", dashboardRoutes);
 app.use("/", SignUpRoutes);
 app.use("/",authenticationRoutes);
 app.use("/",addSitterRoutes);
+app.use("/",purchaseRoutes);
+
 
 
 //For invalid routes

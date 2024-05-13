@@ -19,39 +19,39 @@ head
   form(action='/AddSItter' method='POST' onsubmit='return validateForm()')
     div
       label(for='name') Name:
-      input#name(type='text' name='name' required='')
+      input#name(type='text' name='name' value= sitter.name)
     div
       label(for='location') Location:
-      input#location(type='text' name='location' required='')
+      input#location(type='text' name='location' value= sitter.location)
     div
       label(for='age') Age:
-      input#dob(type='number' name='age' required='')
+      input#age(type='number' name='age' value= sitter.age)
     div
       label(for='gender') Gender:
-      select#gender(name='gender' required='')
+      select#gender(name='gender' value= sitter.gender)
         option(value='male') Male
         option(value='female') Female
     div
       label(for='nextOfKin') Next of Kin:
-      input#nextOfKin(type='text' name='nextOfKin' required='')
+      input#nextOfKin(type='text' name='nextOfKin' value= sitter.nextOfKin)
     div
       label(for='nin') NIN:
-      input#nin(type='text' name='nin' required='')
+      input#nin(type='text' name='nin' value= sitter.nin)
     div
       label(for='recommender') Recommender's Name:
-      input#recommender(type='text' name='recommender' required='')
+      input#recommender(type='text' name='recommender' value= sitter.recommender)
     div
       label(for='religion') Religion:
-      input#religion(type='text' name='religion')
+      input#religion(type='text' name='religion' value= sitter.religion)
     div
       label(for='education') Level of Education:
-      input#education(type='text' name='education' required='')
+      input#education(type='text' name='education' value= sitter.education)
     div
       label(for='sitterNumber') Sitter Number:
-      input#sitterNumber(type='text' name='sitterNumber' required='')
+      input#sitterNumber(type='text' name='sitterNumber' value= sitter.sitterNumber)
     div
       label(for='contacts') Contacts:
-      input#contacts(type='text' name='contacts' required='')
+      input#contacts(type='text' name='contacts' value= sitter.contacts)
     div
     button(type='submit') Register
     footer.footer

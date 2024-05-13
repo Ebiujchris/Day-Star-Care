@@ -17,7 +17,7 @@ const registerBabySchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  droppedBy:{
+  broughtBy:{
     type: String,
     trim :true
   },
@@ -57,6 +57,10 @@ const registerBabySchema = new mongoose.Schema({
     type: Number,
     trim: true
   },
+  // sitter: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Sitter' 
+  // },
   status: {
     type: String,
     trim: true

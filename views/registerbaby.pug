@@ -4,7 +4,8 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title DayStar DayCare
   link(rel='stylesheet' href='/sitecss/baby.css')
-  link(rel='icon' type='image/png' href='/images/logo.jpeg')
+  link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+
 // Main Content
 main
 nav.navbar
@@ -21,8 +22,8 @@ nav.navbar
         a.nav-link(href='#') 
   h1 
   form#babyForm(action="register" method="POST")
-    label(for='babyName') Full Name:
-    input#name(type='text' name='fullName' )
+    label(for='fullName') Full Name:
+    input#fullName(type='text' name='fullName' )
     br
     label(for='gender') Gender:
     select#gender(name='gender')

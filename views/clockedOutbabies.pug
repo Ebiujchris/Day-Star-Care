@@ -5,33 +5,33 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Document
     link(rel='stylesheet', href='/sitecss/babyTable.css')
-    link(rel='icon', type='image/png', href='/images/logo.jpeg')
-    link(href='/css/bootstrap/css/bootstrap.css', rel='stylesheet')
+    link(rel='icon', type='image/png', href='/images/photo3.jpg')
+    
+    
   body
     nav.navbar
       .container
         a.navbar-brand(href='/') Home
         ul.nav
           li.nav-item
-            a.nav-link(href='register') Add Baby
+            a.nav-link(href='register') 
           li.nav-item
-            a.nav-link(href='dashboard') DashBoard 
+            a.nav-link(href='dashboard')  
           li.nav-item
             a.nav-link(href='#')
           li.nav-item
-            a.nav-link(href='dashboard')
+            a.nav-link(href='dashboard') DashBoard
     table#babyTable
       thead
         tr
           th Name
           th Gender
           th Age
-          th Parent1 Name 
-          th Location
+          th Picked By 
           th Baby Number
-          th Contacts
+          th Time
           th Status
-          th Checkin/Checkout
+          th Clocked Out
           th Update 
           th Delete 
           
@@ -43,10 +43,9 @@ html
             td #{baby.fullName}
             td #{baby.gender}
             td #{baby.age}
-            td #{baby.parent1Name}
-            td #{baby.location}
+            td #{baby.pickedBy}
             td #{baby.babyNumber}
-            td #{baby.contacts}
+            td #{baby.departureTime}
             td #{baby.status}
             // Check-in/Check-out button based on baby status
             td

@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/sitecss/babyTable.css')
+    link(rel='icon', type='image/png', href='/public/images/daycare-icon.png')
+
+  body
+    main
+      h1 Register Purchased Day Care Items
+
+      form(action="/registerItems", method="post")
+        label(for="itemType") Item Type:
+        select(id="itemType", name="itemType")
+          option(value="food") Food
+          option(value="scholastic") Scholastic Materials
+          option(value="toys") Toys
+          option(value="others") Others
+
+        label(for="itemName") Item Name:
+        input(type="text", id="itemName", name="itemName")
+
+        label(for="quantity") Quantity:
+        input(type="number", id="quantity", name="quantity" min="1")
+        
+        label(for="unit") Unit:
+        input(type="text", id="unit", name="unit")
+
+        label(for="price") Price:
+        input(type="number", id="price", name="price" min="0" step="0.01")
+
+        label(for="purchaseDate") Purchase Date:
+        input(type="date", id="purchaseDate", name="purchaseDate")
+
+        button(type="submit") Register

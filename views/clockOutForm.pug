@@ -18,11 +18,11 @@ html(lang='en')
             li.nav-item
               a.nav-link(href='dashboard')
             li.nav-item
-              a.nav-link(href='#')
+              a.nav-link(href='#') 
             li.nav-item
-              a.nav-link(href='#')
+              a.nav-link(href='#') 
       h1 
-      form#babyForm(action="/babyClockIn?id="+baby._id method="POST")
+      form#babyForm(action="/babyClockOut?id="+baby._id method="POST")
         label(for='babyName') Full Name:
         input#name(type='text' name='fullName' value= baby.fullName readonly)
         br
@@ -37,34 +37,16 @@ html(lang='en')
         label(for='babyNumber') Baby Number:
         input#babyNumber(type='text' name='babyNumber' value= baby.babyNumber readonly)
         br
-        label(for='sitter') Choose Sitter:
-        select#sitter(name='sitter')
-          if sitters.length
-            each sitter in sitters 
-              option(value=sitter_id) #{sitter.name}
-        small#sitterErr
-        label(for='time') Time to Spend:
-        select#time(name='time')
-          option(value='halfday') Half Day
-          option(value='fullday') Full Day
-      
-        label(for='fee') Fee (UGX):
-        select#fee(name='fee')
-          option(value='10000') 10,000 UGX
-          option(value='15000') 15,000 UGX
-      
-        label(for='broughtBy') Brought By:
-        input#broughtBy(type='text' name='broughtBy' value= baby.broughtBy)
+        
+        label(for='pickedBy') Picked By:
+        input#pickedBy(type='text' name='pickedBy' value= baby.pickedBy)
         
         label(for='arrivalTime') Time of Arrival:
-        input#arrivalTime(type='time' name='arrivalTime')
-        select#arrivalPeriod(name='arrivalPeriod')
-          option(value='AM') AM
-          option(value='PM') PM
+        input#departureTime(type='time' name='departureTime' value.baby.departureTime)
+ 
+        input#status(type='hidden' name='status' value="ClockedOut")
         
-        input#status(type='hidden' name='status' value="ClockedIn")
-        
-        input(type='submit', value='Register')
+        input(type='submit', value='Submit')
         br
     footer.footer
       .container1 

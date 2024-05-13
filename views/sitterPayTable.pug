@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/sitecss/sitterpaytable.css')
+    link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+
+  body
+    main
+      nav.navbar
+        .container
+          a.navbar-brand(href='/') Home
+          ul.nav
+            li.nav-item
+              a.nav-link(href='/dashboard') DashBoard 
+            li.nav-item
+              a.nav-link(href='') 
+            li.nav-item
+              a.nav-link(href='/sitterlist') Sitters
+            li.nav-item
+              a.nav-link(href='#') Sitters Clock In
+      table
+        thead
+          tr
+            th Name
+            th Sitter Number
+            th Babies Assigned
+            th Amount Paid
+            th Date of Payment
+            td Update
+        tbody
+          if sitters.length
+            each sitter in sitters
+              tr
+                td #{sitter.name}
+                td #{sitter.sitterNumber}
+                td #{sitter.babiesAssigned}
+                td #{sitter.amountPaid}
+                td #{sitter.dateOfPayment}
+                td
+                  a.btn.btn-primary.btn-update(href="/paySitter/"+sitter._id) Update

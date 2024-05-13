@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/sitecss/baby.css')
+    link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+
+  body
+    main
+      nav.navbar
+        .container
+          a.navbar-brand(href='/') Home
+          ul.nav
+            li.nav-item
+              a.nav-link(href='/babieslist') 
+            li.nav-item
+              a.nav-link(href='/dashboard') Dashboard
+            li.nav-item
+              a.nav-link(href='#') 
+            li.nav-item
+              a.nav-link(href='#') 
+      
+      form(action="/paySitter?id="+sitter._id, method="post")
+        label(for="name") Name:
+        input(type="text", id="name", name="name", value=sitter.name)
+
+        label(for="sitterNumber") Sitter Number:
+        input(type="text", id="sitterNumber", name="sitterNumber", value=sitter.sitterNumber)
+        br
+
+
+        label(for="babiesAssigned") Babies Assigned to in a Month:
+        input(type="number", id="babiesAssigned", name="babiesAssigned")
+
+        label(for="amountPaid") Amount Paid:
+        input(type="number", id="amountPaid", name="amountPaid")
+
+        label(for="dateOfPayment") Date of Payment:
+        input(type="date", id="dateOfPayment", name="dateOfPayment")
+
+        button(type="submit") Submit

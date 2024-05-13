@@ -5,7 +5,8 @@ head
   title DayStar DayCare
   link(rel='stylesheet' href='/style.css')
   link(rel='stylesheet' href='/sitecss/dash.css')
-  link(rel='icon' type='image/png' href='/images/logo.jpeg')
+  link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+
   nav.navbar
   .container
     h1.logo DayStar DayCare
@@ -13,9 +14,9 @@ head
       li
         a(href='/') Home
       li
-        a(href='#') Babies
+        a(href='#') 
       li
-        a(href='#') Sitters
+        a(href='#') 
       li
         a(href='/index.html') Log Out
     .toggle-button
@@ -34,33 +35,36 @@ head
     .dropdown
       a.item(href='#') Babies
       .dropdown-content
-        a(href='/babieslist') Babies Registered:
+        a(href='/babieslist') Babies Registered:(#{babiesCount})
         a(href='/babiesClockedin') Babies Clock In:
-        a(href='') Babies Clock Out:
+        a(href='/babiesClockedOut') Babies Clock Out:
     .dropdown
       a.item(href='#') Sitters
       .dropdown-content
         a(href='/sitterlist') Sitters Registered:
-        a(href='') Sitters On Duty:
-        a(href='') Sitters Off Duty:
+        a(href='/sittersClockedin') Sitters On Duty:
+        a(href='/sittersClockedOut') Sitters Off Duty:
+        a(href='/sitterpayment') Payments
     .dropdown
       a.item(href='#') STORE
       .dropdown-content
-        a(href='/sitterlist') Store Mart
+        a(href='') Store Mart
         a(href='') Add Items
         a(href='') Sold Items:
         a(href='') Available Items:
     .dropdown
-      a.item(href='#') INCOME
+      a.item(href='#') ACCOUNTS
       .dropdown-content
-        a(href='') Reports
-        a(href='') 
-        a(href='') 
+        a(href='/sitterpayment') Payments
+        a(href='') Revenue
+        a(href='/registerItems') Purchase 
+        a(href='/itemsPurchased') Items Purchased 
+        a(href='') Report
     .dropdown
-    a.item(href='#') STORE
+    a.item(href='#') ADMIN
        .dropdown-content
-        a(href='') Store Mart
-        a(href='') Add Items
-        a(href='') Sold Items
+        a(href='') 
+        a(href='') 
+        a(href='') 
     a.item(href='') 
   

@@ -31,11 +31,27 @@ router.get("/babieslist",async(req, res)=>{
   try{
     let babies = await Register.find()
     res.render("babiesregistered",{babies:babies})
-  } catch (error) {
+   } catch (error) {
      res.status(400).send("unable to fetch babies from database")
   }
   
-})
+ })
+
+// router.get("/babieslist", async (req, res) => {
+//   try {
+//     // Fetch all registered babies
+//     let babies = await Register.find();
+
+//     // Count the number of registered babies
+//     let babiesCount = babies.length;
+
+//     // Render the template with both babies data and count
+//     res.render("babiesregistered", { babies, babiesCount });
+//   } catch (error) {
+//     res.status(400).send("Unable to fetch babies from the database");
+//   }
+// });
+
 
 //deleting
 router.post("/delete", async(req, res)=>{
@@ -105,13 +121,51 @@ router.get("/babyClockIn/:id", async(req,res)=> {
 router.post("/babyClockIn", async(req,res)=> {
   try {
     await Register.findOneAndUpdate({_id: req.query.id}, req.body);
-    res.redirect("clockedinbabies");
+    res.redirect("/babiesClockedin");
 
   } catch (error) {
     res.status(404).send("unable to update")
   }
 })
 
-
 //clock Out baby route
+router.get("/babiesClockedOut", async (req, res)=>{
+  try {
+    let babies = await Register.find({status: "ClockedOut"})
+    res.render("clockedOutbabies", {babies:babies})
+    console.log("babies clocked Out", babies);
+
+  } catch (error) {
+    res.status(400).send("unable to find baby!")
+    console.log("unable to find babies in db", error);
+    
+  }
+})
+
+//clock Out baby route for form
+router.get("/babyClockOut/:id", async(req,res)=> {
+  try {
+    
+    const babyClockin = await Register.findOne({_id: req.params.id});
+    res.render("clockOutForm", {
+      baby:babyClockin,
+      
+    });
+
+  } catch (error) {
+    console.log("error finding baby!", error);
+    res.status(400).send("unable to find baby from db");
+  }
+})
+
+router.post("/babyClockOut", async(req,res)=> {
+  try {
+    await Register.findOneAndUpdate({_id: req.query.id}, req.body);
+    res.redirect("/babiesClockedOut");
+
+  } catch (error) {
+    res.status(404).send("unable to update")
+  }
+})
+
 module.exports = router;
