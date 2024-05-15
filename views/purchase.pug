@@ -4,11 +4,23 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title DayStar DayCare
-    link(rel='stylesheet', href='/sitecss/babyTable.css')
+    link(rel='stylesheet', href='/sitecss/purchase.css')
     link(rel='icon', type='image/png', href='/public/images/daycare-icon.png')
 
   body
     main
+    nav.navbar
+      .container
+        a.navbar-brand(href='/') Home
+        ul.nav
+          li.nav-item
+            a.nav-link(href='#') 
+          li.nav-item
+            a.nav-link(href='') 
+          li.nav-item
+            a.nav-link(href='#')
+          li.nav-item
+            a.nav-link(href='dashboard') DashBoard 
       h1 Register Purchased Day Care Items
 
       form(action="/registerItems", method="post")

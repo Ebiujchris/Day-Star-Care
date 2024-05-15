@@ -42,5 +42,5 @@ html(lang='en')
             td 
               - let totalPrice = 0
               - for (let item of items)
-                - totalPrice += parseFloat(item.price) // Ensure item.price is parsed as a float
-              | $#{totalPrice.toFixed(2)}
+                - totalPrice += parseFloat(item.price) 
+              | UGX#{totalPrice.toFixed(2)}

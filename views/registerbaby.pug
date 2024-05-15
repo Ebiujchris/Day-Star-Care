@@ -1,55 +1,66 @@
 doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title DayStar DayCare
-  link(rel='stylesheet' href='/sitecss/baby.css')
-  link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/sitecss/baby.css')
+    link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
 
-// Main Content
-main
-nav.navbar
-  .container
-    a.navbar-brand(href='/') Home
-    ul.nav
-      li.nav-item
-        a.nav-link(href='/babieslist') Babies
-      li.nav-item
-        a.nav-link(href='dashboard') DashBoard 
-      li.nav-item
-        a.nav-link(href='#') 
-      li.nav-item
-        a.nav-link(href='#') 
-  h1 
-  form#babyForm(action="register" method="POST")
-    label(for='fullName') Full Name:
-    input#fullName(type='text' name='fullName' )
-    br
-    label(for='gender') Gender:
-    select#gender(name='gender')
-      option(value='male') Male
-      option(value='female') Female
-    br
-    label(for='age') Age:
-    input#age(type='number' name='age' )
-    br
-    label(for='parent1Name') Parent 1 Name:
-    input#name(type='text' name='parent1Name' )
-    br
-    label(for='parent2Name') Parent 2 Name:
-    input#name(type='text' name='parent2Name' )
-    br
-    label(for='location') Location:
-    input#location(type='text' name='location' )
-    br
-    label(for='babyNumber') Baby Number:
-    input#babyNumber(type='text' name='babyNumber')
-    br
-    label(for='contacts') Contacts:
-    input#contacts(type='text' name='contacts')
-    br
-    input(type='submit' value='Register')
-    br
-    footer.footer
-  .container1 
-    p Copyright © 2024 Ebiu Julius. All rights reserved.
+  body
+    // Main Content
+    main
+      nav.navbar
+        .container
+          a.navbar-brand(href='/') Home
+          ul.nav
+            li.nav-item
+              a.nav-link(href='/babieslist') Babies
+            li.nav-item
+              a.nav-link(href='dashboard') DashBoard 
+            li.nav-item
+              a.nav-link(href='#') 
+            li.nav-item
+              a.nav-link(href='#') 
+      h1 
+      form#babyForm(action="register" method="POST")
+        label(for='fullName') Full Name:
+        input#fullName(type='text' name='fullName')
+        br
+        label(for='gender') Gender:
+        select#gender(name='gender')
+          option(value='male') Male
+          option(value='female') Female
+        br
+        label(for='age') Age:
+        input#age(type='number' name='age')
+        br
+        label(for='parent1Name') Parent 1 Name:
+        input#parent1Name(type='text' name='parent1Name')
+        br
+        label(for='parent2Name') Parent 2 Name:
+        input#parent2Name(type='text' name='parent2Name')
+        br
+        label(for='location') Location:
+        select#location(name='location')
+          option(value='Kabalagala') Kabalagala
+          option(value='Kansanga') Kansanga
+          option(value='Muyenga') Muyenga
+          option(value='Kibuli') Kibuli
+          option(value='Nsambya') Nsambya
+          option(value='Ggaba') Ggaba
+          option(value='Bunga') Bunga
+        br
+        label(for='babyNumber') Baby Number:
+        input#babyNumber(type='text' name='babyNumber')
+        br
+        label(for='contacts') Contacts:
+        input#contacts(type='text' name='contacts')
+        br
+        input(type='submit' value='Register')
+        br
+        script(src='/public/js/validateBaby.js')
+      
+      footer.footer
+        .container1 
+          p Copyright © 2024 Ebiu Julius. All rights reserved.

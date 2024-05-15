@@ -25,6 +25,7 @@ const SignUpRoutes = require("./routes/SignUpRoutes");
 const authenticationRoutes = require("./routes/authenticationRoutes");
 const addSitterRoutes = require("./routes/registerSitterRoutes");
 const purchaseRoutes = require("./routes/purchaseRoutes");
+const reportRoutes = require("./routes/reportRoutes");
 
 
 //Instantiations
@@ -71,7 +72,7 @@ app.use("/", SignUpRoutes);
 app.use("/",authenticationRoutes);
 app.use("/",addSitterRoutes);
 app.use("/",purchaseRoutes);
-
+app.use("/",reportRoutes);
 
 
 //For invalid routes

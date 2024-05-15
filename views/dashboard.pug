@@ -35,7 +35,7 @@ head
     .dropdown
       a.item(href='#') Babies
       .dropdown-content
-        a(href='/babieslist') Babies Registered:(#{babiesCount})
+        a(href='/babieslist') Babies Registered:#{totalBabies}
         a(href='/babiesClockedin') Babies Clock In:
         a(href='/babiesClockedOut') Babies Clock Out:
     .dropdown
@@ -44,7 +44,7 @@ head
         a(href='/sitterlist') Sitters Registered:
         a(href='/sittersClockedin') Sitters On Duty:
         a(href='/sittersClockedOut') Sitters Off Duty:
-        a(href='/sitterpayment') Payments
+        a(href='/sitterpayment') 
     .dropdown
       a.item(href='#') STORE
       .dropdown-content

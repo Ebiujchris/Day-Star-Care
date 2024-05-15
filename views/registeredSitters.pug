@@ -55,9 +55,9 @@ html(lang='en')
                 td
                   a.btn.btn-secondary.btn-sm(href='/sitterClockIn/'+sitter._id) ClockIn
                 td
-                  a.btn.btn-primary.btn-update(href="/sitterUpdate/"+sitter._id) Update 
+                  a.btn.btn-primary.btn-update(href="/sittersUpdate/"+sitter._id) Update 
                 // Delete button
                 td
                   form(method='POST', action='/delete')
-                    input(type='hidden', name='id', value=sitter._id)
-                    button.btn.btn-danger.btn-block(type='submit') Delete
+                  input(type='hidden', name='id', value=sitter._id)
+                  button.btn.btn-danger(type='submit') Delete

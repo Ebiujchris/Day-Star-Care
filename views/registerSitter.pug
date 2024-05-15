@@ -1,28 +1,36 @@
 doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Document
-  link(rel='stylesheet' href='/public/sitecss/sitter.css')
-  nav.navbar
-    .container
-      a.navbar-brand(href='/') Home
-      ul.nav
-        li.nav-item
-          a.nav-link(href='/sitterlist') Sitters
-        li.nav-item
-          a.nav-link(href='/dashboard') DashBoard 
-        li.nav-item
-          a.nav-link(href='#') 
-        li.nav-item
-          a.nav-link(href='#') 
-  form(action='/AddSItter' method='POST' onsubmit='return validateForm()')
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet' href='/public/sitecss/sitter.css')
+    nav.navbar
+      .container
+        a.navbar-brand(href='/') Home
+        ul.nav
+          li.nav-item
+            a.nav-link(href='/sitterlist') Sitters
+          li.nav-item
+            a.nav-link(href='/dashboard') DashBoard 
+          li.nav-item
+            a.nav-link(href='#') 
+          li.nav-item
+            a.nav-link(href='#') 
+  form#sitterForm(action='/AddSItter' method='POST' onsubmit='return validateForm()')
     div
       label(for='name') Name:
       input#name(type='text' name='name' )
     div
       label(for='location') Location:
-      input#location(type='text' name='location')
+      select#location(name='location')
+        option(value='Kabalagala') Kabalagala
+        option(value='Kansanga') Kansanga
+        option(value='Muyenga') Muyenga
+        option(value='Kibuli') Kibuli
+        option(value='Nsambya') Nsambya
+        option(value='Ggaba') Ggaba
+        option(value='Bunga') Bunga
     div
       label(for='age') Age:
       input#age(type='number' name='age' )
@@ -54,52 +62,7 @@ head
       input#contacts(type='text' name='contacts')
     div
     button(type='submit') Register
+    script(src='/public/js/validateSitter.js')
     footer.footer
   .container1 
     p Copyright © 2024 Your Website Name. All rights reserved.
-
-
-  script.
-    function validateForm() {
-      const name = document.getElementById('name').value;
-      const location = document.getElementById('location').value;
-      const dob = document.getElementById('dob').value;
-      const gender = document.getElementById('gender').value;
-      const nextOfKin = document.getElementById('nextOfKin').value;
-      const nin = document.getElementById('nin').value;
-      const recommender = document.getElementById('recommender').value;
-      const religion = document.getElementById('religion').value;
-      const education = document.getElementById('education').value;
-      const sitterNumber = document.getElementById('sitterNumber').value;
-      const contacts = document.getElementById('contacts').value;
-      
-      // Validate sitter location
-      if (!location.includes("Kabalagala")) {
-          alert("Sitters must be from Kabalagala.");
-          return false;
-      }
-
-      // Validate date of birth (should be over 18 years old)
-      const dobDate = new Date(dob);
-      const eighteenYearsAgo = new Date();
-      eighteenYearsAgo.setFullYear(eighteenYearsAgo.getFullYear() - 18);
-      if (dobDate > eighteenYearsAgo) {
-          alert("Sitters must be over 18 years old.");
-          return false;
-      }
-
-      // Validate NIN number (should be 14 characters)
-      if (nin.length !== 14) {
-          alert("NIN number must be 14 characters long.");
-          return false;
-      }
-
-      // Validate contact number
-      if (!contacts.match(/^\+?\d+$/)) {
-          alert("Contact number must contain only digits and may start with +.");
-          return false;
-      }
-
-      // If all validations pass, the form is valid
-      return true;
-    }

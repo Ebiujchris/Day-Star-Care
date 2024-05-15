@@ -17,7 +17,7 @@ try {
   res.redirect("/sitterlist");
 
 } catch (error) {
-  res.status(400).send("error, sitter no registered")
+  res.status(400).send("error, sitter not registered")
   console.log("Error registering sitter",error);
 }
 });
@@ -33,7 +33,7 @@ router.get("/sitterlist",async(req, res)=>{
 });
 
 //deleting
-router.post("/delete",async(req, res)=>{
+router.post("/delete", async(req,res)=>{
   try {
     await Sitter.deleteOne({_id:req.body.id});
     res.redirect("back");
@@ -44,25 +44,26 @@ router.post("/delete",async(req, res)=>{
   }
 });
 
-//updating sitter inf in db
-router.get("/sitterUpdate/:id",async(req, res)=>{
+
+//updating sitter info in db
+router.get("/sittersUpdate/:id", async(req, res)=>{
   try {
     const sitterUpdate = await Sitter.findOne({_id: req.params.id});
     res.render("upDateSitter",{sitter:sitterUpdate})
 
   } catch (error) {
     console.log("error finding sitter!",error);
-    res.status(400).send('unable to find sitter from db!');
+    res.status(400).send("unable to find sitter!")
   }
 })
 
-router.post("/sitterUpdate", async(req, res)=> {
+router.post("/sittersUpdate", async(req, res)=>{
   try {
-     await Sitter.findOneAndUpdate({_id: req.query.id}, req.body);
-     res.redirect("/sitterlist");
+    await Sitter.findOneAndUpdate({_id: req.query.id}, req.body);
+    res.redirect("/sitterlist");
 
   } catch (error) {
-     res.status(404).send("unable to update baby in the db!");  
+    res.status(400).send("unable to update sitter!");
   }
 })
 

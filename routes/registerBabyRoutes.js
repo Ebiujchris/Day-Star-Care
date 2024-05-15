@@ -26,31 +26,33 @@ router.post("/register", async(req, res)=>{
  
 });
 
-//fetching babies from the database 
-router.get("/babieslist",async(req, res)=>{
-  try{
-    let babies = await Register.find()
-    res.render("babiesregistered",{babies:babies})
-   } catch (error) {
-     res.status(400).send("unable to fetch babies from database")
-  }
-  
- })
-
-// router.get("/babieslist", async (req, res) => {
-//   try {
-//     // Fetch all registered babies
-//     let babies = await Register.find();
-
-//     // Count the number of registered babies
-//     let babiesCount = babies.length;
-
-//     // Render the template with both babies data and count
-//     res.render("babiesregistered", { babies, babiesCount });
-//   } catch (error) {
-//     res.status(400).send("Unable to fetch babies from the database");
+// //fetching babies from the database 
+// router.get("/babieslist",async(req, res)=>{
+//   try{
+    
+//     let babies = await Register.find()
+//     res.render("babiesregistered",{babies:babies})
+//    } catch (error) {
+//      res.status(400).send("unable to fetch babies from database")
 //   }
-// });
+  
+//  })
+
+router.get("/babieslist", async (req, res) => {
+  try {
+    // Fetch babies from the database
+    let babies = await Register.find();
+
+    // Calculate total number of babies
+    
+    let totalBabies = babies.length;
+
+    // Render the babieslist page and pass babies and totalBabies as local variables
+    res.render("babiesregistered", { babies: babies, totalBabies:totalBabies });
+  } catch (error) {
+    res.status(400).send("Unable to fetch babies from the database");
+  }
+});
 
 
 //deleting

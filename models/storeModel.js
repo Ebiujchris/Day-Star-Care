@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const DollSchema = new mongoose.Schema({
+const ToySchema = new mongoose.Schema({
   iteName: {
     type: String,
     trim: true
@@ -19,4 +19,4 @@ const DollSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("Dolls",DollSchema);
+module.exports = mongoose.model("Toys",ToySchema);

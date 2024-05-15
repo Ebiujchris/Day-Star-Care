@@ -20,6 +20,7 @@ html
             a.nav-link(href='#')
           li.nav-item
             a.nav-link(href='dashboard') DashBoard 
+
     table#babyTable
       thead
         tr
@@ -59,5 +60,9 @@ html
                 form(method='POST', action='/delete')
                   input(type='hidden', name='id', value=baby._id)
                   button.btn.btn-danger(type='submit') Delete
-    
-    //- script(src='/js/baby.js')
+
+    // Calculate total number of babies
+    - let totalBabies = babies.length
+
+    // Display total number of babies on a link
+    a(href='#') Total Babies: #{totalBabies}
