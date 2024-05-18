@@ -1,0 +1,75 @@
+//- doctype html
+//- html(lang='en')
+//-   head
+//-     meta(charset='UTF-8')
+//-     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+//-     title Shopping Site
+//-     link(rel='stylesheet', href='/public/sitecss/store.css')
+//-   body
+//-     main
+//-       nav.navbar
+//-         .container
+//-           a.navbar-brand(href='/') Home
+//-           ul.nav
+//-             li.nav-item
+//-               a.nav-link(href='/babieslist') 
+//-             li.nav-item
+//-               a.nav-link(href='dashboard') DashBoard 
+//-             li.nav-item
+//-               a.nav-link(href='#') 
+//-             li.nav-item
+//-               a.nav-link(href='#') 
+//-         .form-container
+  
+//-   form(action='/sellDoll?id='+doll._id method='POST')
+//-     label(for='name') Name:
+//-     input#name(type='text', name='name' readonly)
+//-     br
+//-     label(for='description') Description:
+//-     textarea#description(name='description', rows='4' readonly)
+//-     br
+//-     label(for='price') Price:
+//-     input#price(type='number', name='price' readonly)
+//-     br
+//-     input#status(type='hidden' name='status' value="Available")
+//-     br
+//-     input#status(type='hidden' name='status' value="ClockedOut")
+//-     button(type='submit') Sell
+
+      
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Sell Doll Form
+    link(rel='stylesheet', href='/public/sitecss/store.css')
+  body
+    main
+      nav.navbar
+        .container
+          a.navbar-brand(href='/') Home
+          ul.nav
+            li.nav-item
+              a.nav-link(href='/babieslist') Babies
+            li.nav-item
+              a.nav-link(href='/dashboard') DashBoard 
+            li.nav-item
+              a.nav-link(href='#') 
+            li.nav-item
+              a.nav-link(href='#') 
+        .form-container
+          form(action=`/sellDoll?id=${doll._id}` method='POST')
+            label(for='name') Name:
+            input#name(type='text' name='name' value=doll.name readonly)
+            br
+            label(for='description') Description:
+            textarea#description(name='description' rows='4' readonly)= doll.description
+            br
+            label(for='price') Price:
+            input#price(type='number' name='price' value=doll.price readonly)
+            br
+            input#status(type='hidden' name='status' value='Sold')
+            br
+            button(type='submit') Sell
+

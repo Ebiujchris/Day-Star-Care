@@ -1,22 +1,24 @@
 const mongoose = require("mongoose");
 
 const ToySchema = new mongoose.Schema({
-  iteName: {
+  name: {
     type: String,
     trim: true
   },
-  itemDescription: {
+  description: {
     type: String,
     trim: true
   },
-  itemPrice: {
+  price: {
     type: String,
     trim: true
   },
-  itemImage: {
+  status: {
     type: String,
     trim: true
-  }
+  },
+  
 });
 
-module.exports = mongoose.model("Toys",ToySchema);
+module.exports = mongoose.model("Dolls",ToySchema);
+

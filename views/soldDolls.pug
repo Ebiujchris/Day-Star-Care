@@ -1,0 +1,95 @@
+//- html(lang='en')
+//-   head
+//-     meta(charset='UTF-8')
+//-     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+//-     title DayStar DayCare
+//-     link(rel='stylesheet', href='/public/sitecss/sittertable.css')
+//-     link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+
+//-   body
+//-     main
+//-       nav.navbar
+//-         .container
+//-           a.navbar-brand(href='/') Home
+//-           ul.nav
+//-             li.nav-item
+//-               a.nav-link(href='/') 
+//-             li.nav-item
+//-               a.nav-link(href='/dashboard') Dashboard
+//-             li.nav-item
+//-               a.nav-link(href='#') 
+//-             li.nav-item
+//-               a.nav-link(href='#') 
+//-     table
+//-       thead
+//-         tr
+//-           th Name
+//-           th Description
+//-           th Price
+//-           th Status
+//-           th Actions
+//-       tbody
+//-         if dolls.length > 0
+//-           each doll in dolls
+//-             tr
+//-               td #{doll.name}
+//-               td #{doll.description}
+//-               td #{doll.price}
+//-               td #{doll.status}
+//-               tr
+//-             td(colspan="4")
+//-             td Total Price:
+//-             td
+//-               - let totalPrice = 0
+//-               - for (let doll of dolls)
+//-                 - totalPrice += parseFloat(doll.price) 
+//-               | UGX#{totalPrice.toFixed(2)}
+                
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/public/sitecss/sittertable.css')
+    link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+
+  body
+    main
+      nav.navbar
+        .container
+          a.navbar-brand(href='/') Home
+          ul.nav
+            li.nav-item
+              a.nav-link(href='/') Home
+            li.nav-item
+              a.nav-link(href='/dashboard') Dashboard
+            li.nav-item
+              a.nav-link(href='#') 
+            li.nav-item
+              a.nav-link(href='#') 
+    table
+      thead
+        tr
+          th Name
+          th Description
+          th Price
+          th Status
+          th Amount
+      tbody
+        if dolls.length > 0
+          each doll in dolls
+            tr
+              td #{doll.name}
+              td #{doll.description}
+              td #{doll.price}
+              td #{doll.status}
+              td
+                
+          tr
+            td(colspan='4') Total Price:
+            td 
+              - let totalPrice = dolls.reduce((total, doll) => total + parseFloat(doll.price), 0)
+              | UGX #{totalPrice.toFixed(2)}
+        else
+          tr
+            td(colspan='5') No dolls available

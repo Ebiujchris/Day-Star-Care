@@ -13,7 +13,7 @@ html
         a.navbar-brand(href='/') Home
         ul.nav
           li.nav-item
-            a.nav-link(href='babieslist') Babies
+            a.nav-link(href='') 
           li.nav-item
             a.nav-link(href='dashboard') DashBoard 
           li.nav-item
@@ -26,10 +26,11 @@ html
           th Name
           th Gender
           th Age 
+          th Parent
+          th Location
+          th Contact
           th Baby NO 
-          th Sitter
           th Amount Paid
-          th Pay Date
           th Dropped By
           th Time
           th Status
@@ -45,10 +46,11 @@ html
             td #{baby.fullName}
             td #{baby.gender}
             td #{baby.age}
+            th #{baby.parent1Name}
+            th #{baby.location}
+            th #{baby.contacts}
             td #{baby.babyNumber}
-            td #{baby.sitter}
             td #{baby.fee}
-            td #{baby.dateOfPayment}
             td #{baby.broughtBy}
             td #{baby.arrivalTime}
             td #{baby.status}

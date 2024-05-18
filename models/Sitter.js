@@ -61,7 +61,16 @@ const SitterSchema = new mongoose.Schema({
   dateOfPayment: {
     type: Date,
     trim: true
+  },
+  assignments: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Register'
+  }],
+  totalPayment: {
+    type: Number,
+    default: 0
   }
+
 });
 
 module.exports = mongoose.model("Sitter", SitterSchema);

@@ -4,7 +4,7 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title DayStar DayCare
-    link(rel='stylesheet', href='/sitecss/baby.css')
+    link(rel='stylesheet', href='/public/sitecss/sittertable.css')
     link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
 
   body
@@ -14,20 +14,29 @@ html(lang='en')
           a.navbar-brand(href='/') Home
           ul.nav
             li.nav-item
-              a.nav-link(href='/babieslist') Babies
+              a.nav-link(href='/') 
             li.nav-item
               a.nav-link(href='/dashboard') Dashboard
             li.nav-item
               a.nav-link(href='#') 
             li.nav-item
               a.nav-link(href='#') 
-
-      .row
-        each doll in dolls
-          .col-md-4
-            .card
-              img.card-img-top(src=doll.image, alt=doll.name)
-              .card-body
-                h5.card-title #{doll.name}
-                p.card-text #{doll.description}
-                p.card-text Price: $#{doll.price}
+    table
+      thead
+        tr
+          th Name
+          th Description
+          th Price
+          th Status
+          th Sell
+          th Actions
+      tbody
+        if dolls.length
+          each doll in dolls
+            tr
+              td #{doll.name}
+              td #{doll.description}
+              td #{doll.price}
+              td #{doll.status}
+              td  
+                a.btn.btn-secondary.btn-sm(href='/sellDoll/'+doll._id) Sell

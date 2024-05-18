@@ -35,7 +35,6 @@ head
     .dropdown
       a.item(href='#') Babies
       .dropdown-content
-        a(href='/babieslist') Babies Registered:#{totalBabies}
         a(href='/babiesClockedin') Babies Clock In:
         a(href='/babiesClockedOut') Babies Clock Out:
     .dropdown
@@ -46,14 +45,13 @@ head
         a(href='/sittersClockedOut') Sitters Off Duty:
         a(href='/sitterpayment') 
     .dropdown
-      a.item(href='#') STORE
+      a.item(href='') Dolls
       .dropdown-content
-        a(href='') Store Mart
-        a(href='') Add Items
-        a(href='') Sold Items:
-        a(href='') Available Items:
+        a(href='/addDoll') Add Doll
+        a(href='/Dolls') Available Items:
+        a(href='/soldDolls') Sold Dolls
     .dropdown
-      a.item(href='#') ACCOUNTS
+      a.item(href='#') Income
       .dropdown-content
         a(href='/sitterpayment') Payments
         a(href='') Revenue
