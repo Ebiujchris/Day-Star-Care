@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const SitterSchema = new mongoose.Schema({
   name: {
@@ -11,7 +11,7 @@ const SitterSchema = new mongoose.Schema({
   },
   age: {
     type: Number,
-    trim : true
+    trim: true
   },
   gender: {
     type: String,
@@ -52,25 +52,26 @@ const SitterSchema = new mongoose.Schema({
   },
   babiesAssigned: {
     type: Number,
-    trim: true
+    default: 0
   },
   amountPaid: {
     type: Number,
-    trim: true
+    default: 0
   },
   dateOfPayment: {
     type: Date,
-    trim: true
+    default: Date.now
   },
-  assignments: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Register'
-  }],
+  babiesAttended: {
+    type: Number,
+    default: 0
+  },
   totalPayment: {
     type: Number,
     default: 0
-  }
-
+  },
+  
+  
 });
 
-module.exports = mongoose.model("Sitter", SitterSchema);
+module.exports = mongoose.model('Sitter', SitterSchema);

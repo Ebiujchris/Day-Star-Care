@@ -1,74 +1,54 @@
+//  const mongoose = require("mongoose");
+
+// const registerBabySchema = new mongoose.Schema({
+//   fullName: String,
+//   gender: String,
+//   age: Number,
+//   location: String,
+//   broughtBy: String,
+//   arrivalTime: String,
+//   pickedBy: String,
+//   departureTime: String,
+//   parent1Name: String,
+//   parent2Name: String,
+//   fee: Number,
+//   periodOfStay: String,
+//   babyNumber: { type: Number, unique: true },
+//   contacts: Number,
+//   dateOfPayment: Date,
+//   sitterId: { type: mongoose.Schema.Types.ObjectId, ref: 'Sitter' },
+//   status: String,
+//   paid: { type: Boolean, default: false },
+//   totalPayments: {
+//     type: Number,
+//     default: 0,
+//   },
+// });
+
+// module.exports = mongoose.model("Register", registerBabySchema);
+
 const mongoose = require("mongoose");
 
 const registerBabySchema = new mongoose.Schema({
-  fullName: {
-    type: String,
-    trim: true,
-  },
-  gender: {
-    type: String,
-    trim: true,
-  },
-  age: {
-    type: Number,
-    trim: true
-  },
-  location: {
-    type: String,
-    trim: true
-  },
-  broughtBy:{
-    type: String,
-    trim :true
-  },
-  arrivalTime: {
-    type: String,
-    trim: true
-  },
-  pickedBy:{
-    type: String,
-    trim: true
-  },
-  departureTime: {
-    type: String,
-    trim: true
-  },
-  parent1Name: {
-    type: String,
-    trim: true,
-  },
-  parent2Name: {
-    type: String,
-    trim: true
-  },
-  fee: {
-    type: Number,
-    trim: true
-  },
-  periodOfStay: {
-    type: String,
-    trim: true
-  },
-  babyNumber: {
-    type: Number,
-    Unique: true  
-  },
-  contacts: {
-    type: Number,
-    trim: true
-  },
-  dateOfPayment: {
-    type: Date,
-    trim: true
-  },
-  sitter: {
-    type: String,
-    trim: true
-  },
-  status: {
-    type: String,
-    trim: true
-  }
+  fullName: String,
+  gender: String,
+  age: Number,
+  location: String,
+  broughtBy: String,
+  arrivalTime: String,
+  pickedBy: String,
+  departureTime: String,
+  parent1Name: String,
+  parent2Name: String,
+  fee: Number,
+  periodOfStay: String,
+  babyNumber: { type: Number, unique: true },
+  contacts: Number,
+  dateOfPayment: Date,
+  sitterId: { type: mongoose.Schema.Types.ObjectId, ref: 'Sitter' },
+  status: String,
+  paid: { type: Boolean, default: false },
+  totalPayments: { type: Number, default: 0 },
 });
 
 module.exports = mongoose.model("Register", registerBabySchema);

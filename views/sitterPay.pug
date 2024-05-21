@@ -1,0 +1,42 @@
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/sitecss/sitterpayTable.css')
+  body
+    main
+      nav.navbar
+        .container
+          a.navbar-brand(href='/') Home
+          ul.nav
+            li.nav-item
+              a.nav-link(href='/babieslist') Sitter Pay Management
+            li.nav-item
+              a.nav-link(href='/dashboard') Dashboard
+      
+      table
+        thead
+          tr
+            th Sitter Name
+            th Babies Attended
+            th Payment for Current Period (UGX)
+            
+            th Actions
+        tbody
+          if sitters.length > 0
+            each sitter in sitters
+              tr
+                td #{sitter.name}
+                td #{sitter.babiesAttended}
+                td #{sitter.babiesAttended * 3000}
+                
+                td
+                  form(action=`/payments/${sitter._id}` method='POST')
+                    button(type='submit') Pay
+          else
+            tr
+              td(colspan='5') No sitters found.
+            

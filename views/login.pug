@@ -3,7 +3,7 @@ html
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title Login
+    title  DayStar DayCare
     link(rel='stylesheet' href='/sitecss/Signin.css')
     link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
   body
@@ -14,22 +14,27 @@ html
           li.nav-item
             a.nav-link(href='/') Home
           li.nav-item
-            a.nav-link(href='#') About
+            a.nav-link(href='#') 
           li.nav-item
-            a.nav-link(href='#') Services
+            a.nav-link(href='#') 
           li.nav-item
-            a.nav-link(href='#') Contact
+            a.nav-link(href='#') 
     .container1
       .login-form
         h2.login-title Login
-        form(action='/login' method='POST')
+        form#loginform(action='/login' method='POST' onsubmit='return validateForm(event)')
           .form-group
             label(for='email') Email:
-            input#email(type='email' name='email' required)
+            input#email(type='email' name='email')
           .form-group
             label(for='password') Password:
-            input#password(type='password' name='password' required)
+            input#password(type='password' name='password')
           button.login-btn(type='submit') Login
+          div#empty-fields-message(style='color: red; display: none; ') Please fill all fields.
+          div#wrong-credentials-message(style='color: red; display: none;') Wrong email or password.
         p
           | Don't have an account? 
           a(href='/signup') Sign Up
+        script(src='/public/js/validateLogin.js')
+
+    

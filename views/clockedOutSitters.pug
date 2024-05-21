@@ -23,8 +23,8 @@ html(lang='en')
             th Sitter Number
             th Status
             th Clock In
-            th Update
-            th Delete
+            
+            
         tbody 
           if sitters.length 
             each sitter in sitters
@@ -37,9 +37,5 @@ html(lang='en')
                 td
                   a.btn.btn-secondary.btn-sm(href='/sitterClockin/'+sitter._id) Clock In
                 td
-                  a.btn.btn-primary.btn-update(href="/sitterUpdate/"+sitter._id) Update 
-                // Delete button
-                td
-                  form(method='POST', action='/delete')
-                    input(type='hidden', name='id', value=sitter._id)
-                    button.btn.btn-danger.btn-block(type='submit') Delete
+                 
+                  

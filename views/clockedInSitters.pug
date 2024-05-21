@@ -1,10 +1,10 @@
 html(lang='en')
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title DayStar DayCare
-    link(rel='stylesheet', href='/sitecss/sittertable.css')
-    link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+    link(rel='stylesheet' href='/sitecss/sittertable.css')
+    link(rel='icon' type='image/png' href='/public/images/photo3.jpg')
 
   body
     // Main Content
@@ -14,7 +14,9 @@ html(lang='en')
           a.navbar-brand(href='/') Home
           ul.nav  
             li.nav-item
-              a.nav-link(href='dashboard') Dashboard 
+              a.nav-link(href='/clocked-in-sitters') CLOCKED IN SITTERS
+            li.nav-item
+              a.nav-link(href='/dashboard') Dashboard
       table#sitterTable 
         thead 
           tr 
@@ -22,10 +24,7 @@ html(lang='en')
             th Gender 
             th Sitter Number
             th Status
-            th ClockIn
-            th Update
-            th Pay
-            th Delete
+            th Clock In
         tbody 
           if sitters.length 
             each sitter in sitters
@@ -34,14 +33,8 @@ html(lang='en')
                 td #{sitter.gender}
                 td #{sitter.sitterNumber}
                 td #{sitter.status}
-                
                 td
-                  a.btn.btn-secondary.btn-sm(href='/sitterClockout/'+sitter._id) Clock Out
-                td
-                  a.btn.btn-primary.btn-update(href="/sitterUpdate/"+sitter._id) Update 
-                td 
-                  a.btn.btn-primary.btn-update(href="/paySitter/"+sitter._id) Pay
-                td
-                  form(method='POST', action='/delete')
-                    input(type='hidden', name='id', value=sitter._id)
-                    button.btn.btn-danger.btn-block(type='submit') Delete
+                  a.btn.btn-secondary.btn-sm(href='/sitterClockout/' + sitter._id) Clock Out
+          else
+            tr
+              td(colspan='5') No sitters available

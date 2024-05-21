@@ -45,7 +45,6 @@
 //   }
 // });
 
-
 // //updating sitter info in db
 // router.get("/sittersUpdate/:id", async(req, res)=>{
 //   try {
@@ -78,7 +77,7 @@
 //   } catch (error) {
 //     res.status(400).send("unable to find sitter!")
 //     console.log("unable to find sitters in db", error);
-    
+
 //   }
 // })
 
@@ -87,7 +86,7 @@
 //   try {
 //     const sitterClockin = await Sitter.findOne({_id: req.params.id});
 //     res.render("clockInSitterForm", {
-//       sitter:sitterClockin 
+//       sitter:sitterClockin
 //     });
 //   } catch (error) {
 //     console.log("error finding baby!", error);
@@ -115,7 +114,7 @@
 //   } catch (error) {
 //     res.status(400).send("unable to find sitter!")
 //     console.log("unable to find sitter in db", error);
-    
+
 //   }
 // })
 
@@ -125,7 +124,7 @@
 //     const sitterClockin = await Sitter.findOne({_id: req.params.id});
 //     res.render("clockedOutSitterForm", {
 //       sitter:sitterClockin,
-      
+
 //     });
 
 //   } catch (error) {
@@ -144,10 +143,10 @@
 //   }
 // })
 
-// //fetch sitter pay 
+// //fetch sitter pay
 // router.get("/sitterpayment", async(req, res)=>{
 //   try {
-//     let sitters = await Sitter.find() 
+//     let sitters = await Sitter.find()
 //     res.render("sitterPayTable",{sitters:sitters})
 
 //   } catch (error) {
@@ -177,7 +176,7 @@
 //   }
 // })
 
-// // fetch sitter pay 
+// // fetch sitter pay
 // router.get("/sitterpayment", async (req, res) => {
 //   try {
 //     let sitters = await Sitter.find().populate('assignments');
@@ -339,29 +338,54 @@ router.post("/sitterClockOut", async (req, res) => {
   }
 });
 
-// fetch sitter pay 
-router.get("/sitterpayment", async (req, res) => {
+
+// Route to display the payment management page
+router.get('/payments', async (req, res) => {
   try {
-    let sitters = await Sitter.find().populate('assignments');
-    res.render("sitterPayTable", { sitters: sitters });
+      let sitters = await Sitter.find({});
+      sitters = await Promise.all(sitters.map(async sitter => {
+        const babiesAttended = await Register.countDocuments({ sitterId: sitter._id, paid: false });
+        const totalPayment = babiesAttended * 3000; // Assuming 3000 is the payment per baby
+        return { ...sitter.toObject(), babiesAttended, totalPayment };
+      }));
+      res.render('sitterPay', { sitters });
   } catch (error) {
-    res.status(400).send("unable to fetch sitters");
-    console.log("unable to find sitters in db", error);
+      console.error("Error fetching sitters:", error);
+      res.status(500).json({ error: "Internal server error" });
   }
 });
 
 
 
-router.post("/paySitter", async (req, res) => {
+//Route to update the number of babies attended by a sitter and calculate total payment
+router.post('/payments/:id', async (req, res) => {
+  const sitterId = req.params.id;
   try {
-    const sitter = await Sitter.findOne({ _id: req.query.id });
-    const numberOfAssignments = sitter.assignments.length;
-    sitter.totalPayment = numberOfAssignments * 3000;
-    await sitter.save();
-    res.redirect("/sitterpayment");
+      const sitter = await Sitter.findById(sitterId);
+      if (!sitter) {
+          return res.status(404).send('Sitter not found.');
+      }
+
+      const babiesAttended = await Register.countDocuments({ sitterId, paid: false });
+      const paymentAmount = babiesAttended * 3000;
+
+      // Update all applications with the sitterId and paid false to true
+      await Register.updateMany({ sitterId, paid: false }, { paid: true });
+
+      // Update the totalPayment field in the Sitter schema
+      sitter.totalPayment += paymentAmount;
+      await sitter.save();
+
+      res.redirect('/payments');
   } catch (error) {
-    res.status(404).send("unable to update payment");
+      console.error('Error updating payment:', error);
+      res.status(500).send('Internal server error');
   }
 });
+
+
 
 module.exports = router;
+
+
+

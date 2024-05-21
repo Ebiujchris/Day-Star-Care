@@ -9,7 +9,7 @@ padding: 0;
   background-position: center;
   background-size: cover;
   position: relative;
-  background-image: linear-gradient(rgba(42, 53, 98, 0.7),rgba(4,930,0.7)),url(/public/images/buildingphoto.jpg)
+  background-image: linear-gradient(rgba(56, 83, 180, 0.7),rgba(4,930,0.7)),url(/public/images/photo3.jpg)
   
 }
 
@@ -250,6 +250,6 @@ h3{
 .footer{
   width: 100%;
   text-align: center;
-  padding: 10px 0;
-  background-color: lightgrey;
+  padding: 1px 0;
+  background-color: white;
 }

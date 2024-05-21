@@ -25,6 +25,7 @@ html(lang='en')
             th Quantity
             th Price
             th Purchase Date
+            th Total Amount
         
         tbody
           if items.length > 0
@@ -38,7 +39,7 @@ html(lang='en')
           
           tr
             td(colspan="4")
-            td Total Price:
+            td 
             td 
               - let totalPrice = 0
               - for (let item of items)

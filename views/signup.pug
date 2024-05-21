@@ -3,7 +3,7 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Registration Form
+    title  DayStar DayCare
     link(rel='stylesheet', href='/sitecss/Signin.css')
   body
     nav.navbar
@@ -13,39 +13,39 @@ html(lang='en')
           li.nav-item
             a.nav-link(href='/') Home
           li.nav-item
-            a.nav-link(href='#') About
+            a.nav-link(href='#')
           li.nav-item
-            a.nav-link(href='#') Services
+            a.nav-link(href='#') 
           li.nav-item
-            a.nav-link(href='#') Contact
+            a.nav-link(href='#') 
     h2 
     form(action='/signup', method='POST')
       div
         label(for='name') Name:
-        input#name(type='text', name='name', required='')
+        input#name(type='text', name='name',)
       div
         label(for='nationalId') National ID:
-        input#nationalId(type='text', name='nationalId', required='')
+        input#nationalId(type='text', name='nationalId',)
       div
         label(for='gender') Gender:
-        select#gender(name='gender', required='')
+        select#gender(name='gender')
           option(value='male') Male
           option(value='female') Female
       div
         label(for='address') Address:
-        input#address(type='text', name='address', required='')
+        input#address(type='text', name='address')
       div
         label(for='contact') Contact:
-        input#contact(type='text', name='contact', required='')
+        input#contact(type='text', name='contact')
       div
         label(for='nextOfKin') Next of Kin:
-        input#nextOfKin(type='text', name='nextOfKin', required='')
+        input#nextOfKin(type='text', name='nextOfKin')
       div
         label(for='email') Email:
-        input#email(type='email', name='email', required='')
+        input#email(type='email', name='email')
       div
         label(for='password') Password:
-        input#password(type='password', name='password', required='')
+        input#password(type='password', name='password')
       br
       button.btn(type='submit') Register
       br
@@ -54,3 +54,4 @@ html(lang='en')
       a(href='/login') Login
       p
       br
+      

@@ -5,7 +5,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title DayStar DayCare
     link(rel='stylesheet', href='/sitecss/baby.css')
-    link(rel='icon', type='image/png', href='/images/logo.jpeg')
+    link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
 
   body
     main
@@ -14,15 +14,15 @@ html(lang='en')
           a.navbar-brand(href='/') Home
           ul.nav
             li.nav-item
-              a.nav-link(href='/sitterlist') Sitters
+              a.nav-link(href='') 
             li.nav-item
               a.nav-link(href='/dashboard') DashBoard 
             li.nav-item
               a.nav-link(href='#') 
             li.nav-item
               a.nav-link(href='#')
-
-      form#babyForm(action="/babiesUpdate?id=" + baby._id method="POST")
+    
+      form#babyForm(action="/babyClockIn?id="+baby._id method="POST")
         label(for='fullName') Full Name:
         input#fullName(type='text' name='fullName' value=baby.fullName)
         br
@@ -36,10 +36,9 @@ html(lang='en')
         br
         label(for='parent1Name') Parent 1 Name:
         input#parent1Name(type='text' name='parent1Name' value=baby.parent1Name)
-        
         br
         label(for='location') Location:
-        select#location(name='location')
+        select#location(name='location' required)
           option(value='Kabalagala') Kabalagala
           option(value='Kansanga') Kansanga
           option(value='Muyenga') Muyenga
@@ -48,38 +47,41 @@ html(lang='en')
           option(value='Ggaba') Ggaba
           option(value='Bunga') Bunga
         br
-
         label(for='contacts') Contacts:
         input#contacts(type='text' name='contacts' value=baby.contacts)
         br
-
         label(for='babyNumber') Baby Number:
-        input#babyNumber(type='text' name='babyNumber' onkeypress='restrictInputToNumbers(event)')
-
-
-        
+        input#babyNumber(type='text' name='babyNumber' onkeypress='restrictInputToNumbers(event)' value=baby.babyNumber)
+        br
+        label(for='sitter') Choose Sitter:
+        select#sitter(name='sitterId' required)
+          if sitters.length
+            each sitter in sitters
+              option(value=sitter._id) #{sitter.name}
+        small#sitterErr
+        br
         label(for='time') Time to Spend:
-        select#time(name='time')
+        select#time(name='time' required)
           option(value='halfday') Half Day
           option(value='fullday') Full Day
-      
+        br
         label(for='fee') Fee (UGX):
-        select#fee(name='fee')
+        select#fee(name='fee' required)
           option(value='10000') 10,000 UGX
           option(value='15000') 15,000 UGX
-
-        label(for="dateOfPayment") Date of payment:
-        input(type="date",  name="dateOfPayment")
-      
+        br
+        label(for="dateOfPayment") Date of Payment:
+        input(type="date" name="dateOfPayment" required)
+        br
         label(for='broughtBy') Brought By:
-        input#broughtBy(type='text' name='broughtBy' value= baby.broughtBy)
-        
+        input#broughtBy(type='text' name='broughtBy' required)
+        br
         label(for='arrivalTime') Time of Arrival:
-        input#arrivalTime(type='time' name='arrivalTime')
-        select#arrivalPeriod(name='arrivalPeriod')
+        input#arrivalTime(type='time' name='arrivalTime' required)
+        select#arrivalPeriod(name='arrivalPeriod' required)
           option(value='AM') AM
           option(value='PM') PM
-        
+        br
         input#status(type='hidden' name='status' value="ClockedIn")
         br
         input(type='submit' value='Register')

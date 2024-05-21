@@ -24,19 +24,44 @@ router.get("/register",async(req, res)=>{
 }); 
 
 //post route 
-router.post("/register", async(req, res)=>{
-  try{
-    const baby = new Register(req.body)
-    console.log(baby);
-    await baby.save();
-    res.redirect("/babiesClockedin");
+// router.post("/register", async(req, res)=>{
+//   try{
+//     const baby = new Register(req.body)
+//     console.log(baby);
+//     await baby.save();
+//     res.redirect("/babiesClockedin");
     
-  } catch (error) {
-     res.status(400).send("error, baby not registered")
-     console.log("Error registering baby..",error);
-  }
+//   } catch (error) {
+//      res.status(400).send("error, baby not registered")
+//      console.log("Error registering baby..",error);
+//   }
  
+// });
+
+// Route to add a baby and assign a sitter
+router.post("/register", async (req, res) => {
+  try {
+    const newBaby = new Register(req.body);
+    newBaby.totalPayments = req.body.fee
+    await newBaby.save();
+    
+    
+
+    const sitter = await Sitter.findById(newBaby.sitterId);
+    if (sitter) {
+      sitter.babiesAssigned += 1;
+      sitter.totalPayment += 3000; // Assuming 3000 UGX per baby assignment
+      await sitter.save();
+    }
+
+    res.redirect("/babiesClockedin");
+  } catch (error) {
+    console.error("Error registering baby:", error);
+    res.status(400).send("Error registering baby.");
+  }
 });
+
+
 
 
 //deleting
@@ -152,6 +177,28 @@ router.post("/babyClockOut", async(req,res)=> {
   } catch (error) {
     res.status(404).send("unable to update")
   }
-})
+});
+
+// revenue report
+router.get('/revenue-report', async (req, res) => {
+  try {
+    const totalPayments = await Register.aggregate([
+      {
+        $group: {
+          _id: null,
+          totalAmount: { $sum: "$totalPayments" }
+        }
+      }
+    ]);
+
+    const totalAmount = totalPayments.length > 0 ? totalPayments[0].totalAmount : 0;
+
+    res.render('revenue_report', { totalAmount });
+  } catch (error) {
+    console.error("Error calculating total payments:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 
 module.exports = router;

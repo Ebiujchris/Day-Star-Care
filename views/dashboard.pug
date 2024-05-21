@@ -1,68 +1,74 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title DayStar DayCare
-  link(rel='stylesheet' href='/style.css')
-  link(rel='stylesheet' href='/sitecss/dash.css')
-  link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
 
-  nav.navbar
-  .container
-    h1.logo DayStar DayCare
-    ul.nav-links
-      li
-        a(href='/') Home
-      li
-        a(href='#') 
-      li
-        a(href='#') 
-      li
-        a(href='/index.html') Log Out
-    .toggle-button
-      span
-      span
-      span
-// DASHBOARD
-.dashboard-container
-  .sidebar
-    h2 DASHBOARD
-    .dropdown
-      a.item(href='#') Register
-      .dropdown-content
-        a(href='/register') Register Baby
-        a(href='/AddSitter') Register Sitter
-    .dropdown
-      a.item(href='#') Babies
-      .dropdown-content
-        a(href='/babiesClockedin') Babies Clock In:
-        a(href='/babiesClockedOut') Babies Clock Out:
-    .dropdown
-      a.item(href='#') Sitters
-      .dropdown-content
-        a(href='/sitterlist') Sitters Registered:
-        a(href='/sittersClockedin') Sitters On Duty:
-        a(href='/sittersClockedOut') Sitters Off Duty:
-        a(href='/sitterpayment') 
-    .dropdown
-      a.item(href='') Dolls
-      .dropdown-content
-        a(href='/addDoll') Add Doll
-        a(href='/Dolls') Available Items:
-        a(href='/soldDolls') Sold Dolls
-    .dropdown
-      a.item(href='#') Income
-      .dropdown-content
-        a(href='/sitterpayment') Payments
-        a(href='') Revenue
-        a(href='/registerItems') Purchase 
-        a(href='/itemsPurchased') Items Purchased 
-        a(href='') Report
-    .dropdown
-    a.item(href='#') ADMIN
-       .dropdown-content
-        a(href='') 
-        a(href='') 
-        a(href='') 
-    a.item(href='') 
-  
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/sitecss/dash.css')
+    link(rel='icon', type='image/png', href='/public/images/photo3.jpg')
+
+  body
+    nav.navbar
+      .container
+        h1.logo DayStar DayCare
+        ul.nav-links
+          li
+            a(href='/') Home
+          li
+            a(href='#') 
+          li
+            a(href='#') 
+          li
+            a(href='/index.html') Log Out
+        .toggle-button
+          span
+          span
+          span
+
+    .dashboard-container
+      .sidebar
+        h2 DASHBOARD
+        .dropdown
+          a.item(href='#') Register
+          .dropdown-content
+            a(href='/register') Register Baby
+            a(href='/AddSitter') Register Sitter
+        .dropdown
+          a.item(href='#') Babies
+          .dropdown-content
+            a(href='/babiesClockedin') Babies Clock In
+            a(href='/babiesClockedOut') Babies Clock Out
+        .dropdown
+          a.item(href='#') Sitters
+          .dropdown-content
+            a(href='/sitterlist') Sitters Registered
+            a(href='/sittersClockedin') Sitters On Duty
+            a(href='/sittersClockedOut') Sitters Off Duty
+            
+        .dropdown
+          a.item(href='#') Dolls
+          .dropdown-content
+            a(href='/addDoll') Add Doll
+            a(href='/Dolls') Available Dolls
+            a(href='/soldDolls') Sold Dolls
+        .dropdown
+          a.item(href='#') Income
+          .dropdown-content
+            a(href='/payments') Sitter Payments
+            a(href='/revenue-report') Revenue Report
+            a(href='#') 
+        a.item(href='/admin') Admin
+        .dropdown
+          a.item(href='#') Procurement
+          .dropdown-content
+            a(href='/registerItems') Purchase
+            a(href='/itemsPurchased') Items Purchased
+            
+      
+
+      
+
+
+

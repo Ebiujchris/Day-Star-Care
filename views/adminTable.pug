@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Day Star Day Care
+    link(rel='stylesheet', href='/sitecss/babyTable.css')
+    link(rel='icon', type='image/png', href='/images/photo3.jpg')
+    
+  body
+    nav.navbar
+      .container
+        a.navbar-brand(href='/') Home
+        ul.nav
+          li.nav-item
+            a.nav-link(href='') 
+          li.nav-item
+            a.nav-link(href='') 
+          li.nav-item
+            a.nav-link(href='#')
+          li.nav-item
+            a.nav-link(href='dashboard') DashBoard 
+
+    doctype html
+html
+  head
+    title Admin Table
+  body
+    table
+      thead
+        tr
+          th Name
+          th National ID
+          th Gender
+          th Address
+          th Contact
+          th Next of Kin
+          th Email
+      tbody
+        if admin && admin.length
+          each adminItem in admin
+            tr
+              td= adminItem.name
+              td= adminItem.nationalId
+              td= adminItem.gender
+              td= adminItem.address
+              td= adminItem.contact
+              td= adminItem.nextOfKin
+              td= adminItem.email
+        else
+          tr
+            td(colspan='7') No admin data available

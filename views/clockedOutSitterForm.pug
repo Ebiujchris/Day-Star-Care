@@ -1,38 +1,35 @@
 doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Document
-  link(rel='stylesheet' href='/public/sitecss/sitter.css')
-  nav.navbar
-    .container
-      a.navbar-brand(href='/') Home
-      ul.nav
-        li.nav-item
-          a.nav-link(href='') Sitters
-        li.nav-item
-          a.nav-link(href='/dashboard') DashBoard 
-        li.nav-item
-          a.nav-link(href='#') 
-        li.nav-item
-          a.nav-link(href='#') 
-  form(action='/sitterClockIn?id='+sitter._id method='POST' onsubmit='return validateForm()')
-    div
-      label(for='name') Name:
-      input#name(type='text' name='name' value=sitter.name readonly)
-    div
-      label(for='gender') Gender:
-      select#gender(name='gender')
-        option(value='male') Male
-        option(value='female') Female
-    div
-      label(for='sitterNumber') Sitter Number:
-      input#sitterNumber(type='text' name='sitterNumber' value=sitter.sitterNumber)
-    div
-
-    input#status(type='hidden' name='status' value="ClockedOut")
-      
-    button(type='submit') Register
-    footer.footer
-  .container1 
-    p Copyright © 2024 Your Website Name. All rights reserved.
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title DayStar DayCare
+    link(rel='stylesheet' href='/public/sitecss/sitter.css')
+  body
+    nav.navbar
+      .container
+        a.navbar-brand(href='/') Home
+        ul.nav
+          li.nav-item
+            a.nav-link(href='') Sitters
+          li.nav-item
+            a.nav-link(href='/dashboard') DashBoard
+          li.nav-item
+            a.nav-link(href='#')
+          li.nav-item
+            a.nav-link(href='#')
+    form(action='/sitterClockIn?id=' + sitter._id method='POST' onsubmit='return validateForm()')
+      div
+        label(for='name') Name:
+        input#name(type='text' name='name' value=sitter.name readonly)
+      div
+        label(for='gender') Gender:
+        select#gender(name='gender')
+          option(value='male') Male
+          option(value='female') Female
+      div
+        label(for='sitterNumber') Sitter Number:
+        input#sitterNumber(type='text' name='sitterNumber' value=sitter.sitterNumber)
+      div
+        input#status(type='hidden' name='status' value='ClockedOut')
+      button(type='submit') Register

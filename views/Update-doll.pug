@@ -21,15 +21,15 @@ html(lang='en')
               a.nav-link(href='#') 
         .form-container
   
-  form(action='/addDoll', method='POST')
+  form(action='/dollsUpdate?id='+doll._id, method='POST')
     label(for='name') Name:
-    input#itemName(type='text', name='name')
+    input#itemName(type='text', name='name' value=doll.name)
     br
     label(for='description') Description:
-    textarea#description(name='description', rows='4',)
+    textarea#description(name='description', rows='4', value=doll.description)
     br
     label(for='price') Price:
-    input#price(type='number', name='price')
+    input#price(type='number', name='price' value=doll.price)
     br
     input#status(type='hidden' name='status' value="Available")
     button(type='submit') Add Item

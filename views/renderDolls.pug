@@ -14,7 +14,7 @@ html(lang='en')
           a.navbar-brand(href='/') Home
           ul.nav
             li.nav-item
-              a.nav-link(href='/') 
+              a.nav-link(href='/') DOLLS FOR SALE
             li.nav-item
               a.nav-link(href='/dashboard') Dashboard
             li.nav-item
@@ -40,3 +40,6 @@ html(lang='en')
               td #{doll.status}
               td  
                 a.btn.btn-secondary.btn-sm(href='/sellDoll/'+doll._id) Sell
+              td
+                 a.btn.btn-primary.btn-update(href="/dollsUpdate/"+doll._id) Update
+            // Delete button 

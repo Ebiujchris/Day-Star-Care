@@ -76,7 +76,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 select {
-  width: 30%;
+  width: 20%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -103,7 +103,7 @@ select {
 .login-form {
   background-color: #f7f7f7;
   border-radius: 8px;
-  padding: 20px;
+  padding: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -155,4 +155,15 @@ select {
   border-radius: 4px;
   cursor: pointer;
   margin-left: 20px;
+}
+#empty-fields-message{
+  padding: 10px;
+  margin-left: 10px;
+}
+#wrong-credentials-message{
+  padding: 10px;
+  margin-left: 10px;
+}
+p {
+  padding-left: 20px;
 }
